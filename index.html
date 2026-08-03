@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kamal Saini | Game Developer Portfolio</title>
+  <title>Kamal Saini | Unity Game Developer Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
@@ -39,120 +39,116 @@
       border:4px solid #f39c12; margin-bottom:20px; object-fit:cover;
     }
     .hero-content h1 { font-size:3rem; margin-bottom:10px; }
-    .hero-content p { font-size:1.4rem; margin-bottom:20px; }
+    .hero-content p { font-size:1.4rem; margin-bottom:10px; }
+    .hero-subtitle { font-size:1.1rem !important; color:#e0e0e0; margin-bottom:25px !important; }
     .btn {
       background:#f39c12; color:#fff; padding:12px 24px; border:none;
       border-radius:25px; cursor:pointer; text-decoration:none;
-      transition: all 0.3s;
+      transition: all 0.3s; font-weight: 500; display: inline-block;
     }
     .btn:hover { background:#d35400; transform:translateY(-3px); }
 
+    /* Stats Section */
+    #stats { padding:40px 40px; background:#141414; border-bottom:1px solid #222; }
+    .stats-container {
+      display:flex; justify-content:space-around; flex-wrap:wrap;
+      max-width:1200px; margin:0 auto; gap:20px;
+    }
+    .stat-card { text-align:center; flex:1; min-width:200px; padding:15px; }
+    .stat-card h2 { color:#f39c12; font-size:2.5rem; margin-bottom:5px; }
+    .stat-card p { color:#ccc; font-size:1rem; }
+
     /* Sections */
     section { padding:80px 40px; }
-    h2 { text-align:center; font-size:2rem; margin-bottom:40px; }
+    h2 { text-align:center; font-size:2rem; margin-bottom:40px; color:#f39c12; }
 
     /* About */
     #about p {
-      max-width:800px; margin:0 auto;
+      max-width:850px; margin:0 auto;
       text-align:center; font-size:1.1rem;
       line-height:1.8; color:#ccc;
     }
 
-    /* Skills */
-    #skills .skill {
-      margin-bottom:20px;
-      max-width:700px; margin-left:auto; margin-right:auto;
+    /* Skills Grid */
+    .skills-container {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:25px; max-width:1200px; margin:0 auto;
     }
-    #skills .skill h3 { margin-bottom:8px; font-size:1rem; }
-    .progress-bar {
-      background:#333; border-radius:20px; overflow:hidden;
+    .skill-category {
+      background:#1a1a1a; padding:25px; border-radius:10px;
+      border:1px solid #333;
     }
-    .progress {
-      height:12px; background:#f39c12;
-      width:0; transition:width 2s ease;
+    .skill-category h3 { color:#f39c12; margin-bottom:15px; font-size:1.2rem; }
+    .skill-tags { display:flex; flex-wrap:wrap; gap:10px; }
+    .skill-tags span {
+      background:#2a2a2a; border:1px solid #444; color:#fff;
+      padding:6px 12px; border-radius:15px; font-size:0.85rem;
     }
 
-    /* ===== Fixed Project Grids (Responsive + Non-Stretched Images) ===== */
-    #personal .projects-grid,
-    #mobzway .projects-grid {
+    /* Project Grids */
+    .projects-grid {
       display:grid;
       grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
-      gap:28px;
-      justify-content:center;
-      align-items:start;
-      max-width:1200px;
-      margin:0 auto;
-      padding:0 10px;
+      gap:28px; justify-content:center; align-items:start;
+      max-width:1200px; margin:0 auto; padding:0 10px;
     }
 
     .project-card {
       background:#1e1e1e; border:1px solid #333;
-      border-radius:12px; overflow:hidden; cursor:pointer;
+      border-radius:12px; overflow:hidden;
       transition: all 0.3s ease; opacity:0; transform: translateY(40px);
-      align-self:start;
+      align-self:stretch; display:flex; flex-direction:column;
     }
 
-    /* Prevent image stretching */
     .project-card img {
-      width:100%;
-      height:auto;
-      aspect-ratio:16/9;
-      object-fit:contain; /* prevents stretching */
-      background:#111; /* gives contrast if transparent icon */
-      border-bottom:1px solid #333;
-      padding:10px;
+      width:100%; height:auto; aspect-ratio:16/9;
+      object-fit:cover; background:#111; border-bottom:1px solid #333;
     }
 
-    .project-card h3 { margin:15px; color:#f39c12; text-align:center; }
-    .project-card p { margin:0 15px 20px; font-size:0.95rem; color:#ccc; text-align:center; }
-    .project-links { margin:0 15px 20px; text-align:center; }
+    .project-card-content { padding:20px; display:flex; flex-direction:column; flex-grow:1; }
+    .project-card h3 { margin-bottom:10px; color:#f39c12; text-align:center; }
+    .project-card p { font-size:0.95rem; color:#ccc; text-align:center; flex-grow:1; margin-bottom:15px; }
+    .project-links { text-align:center; margin-top:auto; }
     .project-links a {
-      margin:0 5px; padding:8px 15px; border-radius:20px;
+      display:inline-block; margin:5px; padding:8px 15px; border-radius:20px;
       text-decoration:none; font-size:0.9rem; background:#333; color:#fff;
       transition:all 0.3s;
     }
-    .project-links a:hover { background:#f39c12; }
+    .project-links a:hover { background:#f39c12; color:#000; }
     .project-card.show { opacity:1; transform:translateY(0); transition:all 0.6s ease; }
     .project-card:hover { box-shadow:0 8px 20px rgba(243,156,18,0.3); border:1px solid #f39c12; transform:translateY(-5px); }
 
     /* Responsive Layouts */
     @media (min-width: 1025px) {
-      #personal .projects-grid,
-      #mobzway .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      }
+      .projects-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
     }
 
     @media (max-width: 1024px) and (min-width: 601px) {
-      #personal .projects-grid,
-      #mobzway .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      }
+      .projects-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
     }
 
     @media (max-width: 600px) {
-      #personal .projects-grid,
-      #mobzway .projects-grid {
-        grid-template-columns: 1fr;
-        gap:20px;
-      }
-      .project-card img { aspect-ratio: 4/3; }
-      .project-card h3 { font-size:1rem; }
+      .projects-grid { grid-template-columns: 1fr; gap:20px; }
+      .project-card img { aspect-ratio: 16/9; }
+      .project-card h3 { font-size:1.1rem; }
     }
 
     /* Footer */
     footer {
       background:#111; border-top:1px solid #333;
-      text-align:center; padding:20px;
+      text-align:center; padding:25px;
     }
-    footer a { color:#f39c12; margin:0 10px; font-size:1.3rem; }
+    footer p { color:#888; margin-bottom:10px; }
+    footer a { color:#f39c12; margin:0 12px; font-size:1.4rem; transition:0.3s; }
+    footer a:hover { color:#fff; }
 
     /* Mobile Navigation */
     @media(max-width:768px) {
       nav ul {
         display:none; flex-direction:column; position:absolute;
         top:60px; right:40px; background:#222;
-        padding:15px; border-radius:10px;
+        padding:15px; border-radius:10px; width:200px; border:1px solid #333;
       }
       nav ul.show { display:flex; }
       .menu-toggle { display:block; color:#fff; }
@@ -168,9 +164,9 @@
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#mobzway">Mobzway Projects</a></li>
-        <li><a href="#personal">Personal Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
+        <li><a href="#capsitech">Capsitech</a></li>
+        <li><a href="#mobzway">Mobzway</a></li>
+        <li><a href="#personal">Personal</a></li>
       </ul>
     </nav>
   </header>
@@ -178,168 +174,261 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <img src="assets/imgs/profile.png" alt="Profile Photo">
+      <img src="assets/imgs/profile.png" alt="Kamal Saini Photo">
       <h1>Hi, I'm Kamal Saini</h1>
-     <p>Unity Game Developer | Mobile • PC • Multiplayer Games</p>
-      <a href="resume.html" class="btn">Resume</a>
+      <p>Unity Game Developer</p>
+      <p class="hero-subtitle">
+        2.10+ Years Experience • Mobile & PC Games • Multiplayer
+      </p>
+      <a href="https://drive.google.com/file/d/1vcOTiyobKaMc14o6VgkzmNBrQGrN6E4R/view?usp=drive_link" class="btn" target="_blank">
+        <i class="fas fa-download"></i> Download Resume
+      </a>
     </div>
   </section> 
 
+  <!-- Quick Stats -->
+  <section id="stats">
+    <div class="stats-container">
+      <div class="stat-card">
+        <h2>2.10+</h2>
+        <p>Years Experience</p>
+      </div>
+      <div class="stat-card">
+        <h2>10+</h2>
+        <p>Games Developed / Contributed</p>
+      </div>
+      <div class="stat-card">
+        <h2>4</h2>
+        <p>Platforms (Android • iOS • Windows • WebGL)</p>
+      </div>
+      <div class="stat-card">
+        <h2>2D & 3D</h2>
+        <p>Game Architecture</p>
+      </div>
+    </div>
+  </section>
+
   <!-- About -->
   <section id="about">
-   <h2>About Me</h2>
-   <p>
-    Unity Game Developer with <strong>2 Years 10 Months</strong> of professional experience developing high-quality
-    mobile and PC games using Unity and C#. Experienced in gameplay systems, multiplayer games, UI architecture,
-    backend API integration, and performance optimization.
-    
-    I have worked on casual, puzzle, board, casino, and multiplayer games while building scalable game systems using
-    ScriptableObjects, Object Pooling, Singleton architecture, and clean coding practices. I enjoy creating polished,
-    optimized gameplay experiences and continuously improving my game development skills.
-  </p>
+    <h2>About Me</h2>
+    <p>
+      Unity Game Developer with <strong>2 Years 10 Months</strong> of professional experience building mobile and PC games using Unity and C#. 
+      Skilled in gameplay systems, UI architecture, performance optimization, and backend integrations. 
+      <br><br>
+      Experienced in developing casual, puzzle, board, and multiplayer game systems. Proficient in clean architecture practices including 
+      <strong>ScriptableObjects, Object Pooling, Singleton Pattern</strong>, and modular game systems. Passionate about creating scalable, high-performance games and continuously improving game development skills.
+    </p>
   </section>
 
   <!-- Skills -->
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="skill">
-      <h3>Unity (incl. Unity 6)</h3>
-      <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
-    </div>
-    <div class="skill">
-      <h3>C# Programming</h3>
-      <div class="progress-bar"><div class="progress" data-width="85%"></div></div>
-    </div>
-    <div class="skill">
-      <h3>UI Implementation</h3>
-      <div class="progress-bar"><div class="progress" data-width="95%"></div></div>
-    </div>
-    <div class="skill">
-      <h3>Animations</h3>
-      <div class="progress-bar"><div class="progress" data-width="70%"></div></div>
-    </div>
-    <div class="skill">
-      <h3>Performance Optimization</h3>
-      <div class="progress-bar"><div class="progress" data-width="75%"></div></div>
+    <h2>Technical Skills</h2>
+    <div class="skills-container">
+
+      <div class="skill-category">
+        <h3>Programming & Tools</h3>
+        <div class="skill-tags">
+          <span>C#</span>
+          <span>OOP</span>
+          <span>Unity Engine</span>
+          <span>Git / GitHub</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Game Development</h3>
+        <div class="skill-tags">
+          <span>Unity 6</span>
+          <span>2D/3D Development</span>
+          <span>Gameplay Systems</span>
+          <span>Physics</span>
+          <span>Unity UI</span>
+          <span>Prefabs</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Architecture & Optimization</h3>
+        <div class="skill-tags">
+          <span>ScriptableObjects</span>
+          <span>Singleton Architecture</span>
+          <span>Object Pooling</span>
+          <span>Performance Tuning</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Platforms & Networking</h3>
+        <div class="skill-tags">
+          <span>Android</span>
+          <span>iOS</span>
+          <span>Windows</span>
+          <span>WebGL</span>
+          <span>Socket.io (Multiplayer)</span>
+          <span>REST APIs</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
- <!-- Personal Projects -->
-  <section id="personal">
-    <h2>Personal Projects</h2>
-    <div class="projects-grid">
-      <!--
-      <div class="project-card">
-        <img src="assets/imgs/3drollingball.png" alt="3D Rolling Ball">
-        <h3>3D Rolling Ball</h3>
-        <p>Physics-based rolling ball obstacle game.</p>
-        <div class="project-links">
-          <a href="3drollingball.html">Watch to Play</a>
-        </div>
-      </div>-->
-
-      <div class="project-card">
-        <img src="assets/imgs/turnbased.png" alt="Turn Based Game">
-        <h3>Turn Based Game (C++)</h3>
-        <p>Strategy game implemented in C++.</p>
-        <div class="project-links">
-          <a href="https://github.com/KamalSainiGames/Pokemon-Text-Based-Adventure-C-" target="_blank">Replit</a>
-        </div>
-      </div>
-      <!--
-      <div class="project-card">
-        <img src="assets/imgs/2dsnake.png" alt="2D Snake">
-        <h3>2D Snake</h3>
-        <p>Classic snake game recreated in Unity.</p>
-        <div class="project-links">
-          <a href="2dsnake.html">Watch to Play</a>
-        </div>
-      </div>-->
-
-      <div class="project-card">
-        <img src="assets/imgs/monkey.png" alt="SimplyPairs">
-        <h3>SimplyPairs</h3>
-        <p>Card matching Game.</p>
-        <div class="project-links">
-          <a href="https://github.com/kamal-game-studio/Simply-Pairs">Project Link</a>
-          <a href="https://github.com/kamal-game-studio/Simply-Pairs/blob/main/builds/SimplyPair1.0.apk">APK</a>
-        </div>
-      </div>
-    </div>
-  </section>
- 
-<!-- Capsitech Projects -->
-<section id="capsitech">
+  <!-- Capsitech Projects -->
+  <section id="capsitech">
     <h2>Projects with Capsitech (GameWise)</h2>
-
     <div class="projects-grid">
 
-        <div class="project-card">
-            <img src="assets/imgs/Pebble Trace.png" alt="Pebble Trace">
-
-            <h3>Pebble Trace</h3>
-
-            <p>
-                Pebble Trace is a relaxing puzzle game where players connect
-                matching colored pebbles to solve increasingly challenging levels.
-                Built using Unity with optimized gameplay, smooth UI, and
-                mobile-friendly performance.
-            </p>
-
-            <div class="project-links">
-
-                <a href="https://play.google.com/store/apps/details?id=com.TheGameWise.PebbleTrace&pcampaignid=web_share"
-                   target="_blank">
-                    <i class="fab fa-google-play"></i>
-                    Google Play
-                </a>
-
-                <a href="https://apps.apple.com/in/app/pebble-trace/id6757587390"
-                   target="_blank">
-                    <i class="fab fa-apple"></i>
-                    App Store
-                </a>
-
-            </div>
+      <div class="project-card">
+        <img src="assets/imgs/Pebble Trace.png" alt="Pebble Trace">
+        <div class="project-card-content">
+          <h3>Pebble Trace</h3>
+          <p>
+            Relaxing puzzle game where players connect matching colored pebbles to solve levels. Designed responsive UI flows, score tracking, and efficient mobile update loops.
+          </p>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.TheGameWise.PebbleTrace&pcampaignid=web_share" target="_blank">
+              <i class="fab fa-google-play"></i> Google Play
+            </a>
+            <a href="https://apps.apple.com/in/app/pebble-trace/id6757587390" target="_blank">
+              <i class="fab fa-apple"></i> App Store
+            </a>
+          </div>
         </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://img.freepik.com/free-vector/endless-runner-game-concept_23-2148647582.jpg" alt="Obstacle Avoidance System">
+        <div class="project-card-content">
+          <h3>Procedural Obstacle Runner</h3>
+          <p>
+            Built procedural hole-pattern wall generation and obstacle avoidance mechanics using Object Pooling to maximize replayability and runtime performance on mobile.
+          </p>
+        </div>
+      </div>
 
     </div>
   </section>
+
   <!-- Mobzway Projects -->
   <section id="mobzway">
     <h2>Projects with Mobzway Technologies</h2>
     <div class="projects-grid">
-      <div class="project-card" onclick="window.open('https://topteenpatti.net/', '_blank')">
+
+      <div class="project-card">
         <img src="assets/imgs/ttp.png" alt="Top Teen Patti">
-        <h3>Top Teen Patti</h3>
-        <p>Top Teen Patti - Casino Game</p>
+        <div class="project-card-content">
+          <h3>Top Teen Patti</h3>
+          <p>Multiplayer casino card game featuring real-time room joining, state management, and API integrations.</p>
+          <div class="project-links">
+            <a href="https://topteenpatti.net/" target="_blank">Visit Site</a>
+          </div>
+        </div>
       </div>
-      <div class="project-card" onclick="window.open('https://www.happyace.in/', '_blank')">
+
+      <div class="project-card">
         <img src="assets/imgs/hac.png" alt="Happy Ace Casino">
-        <h3>Happy Ace Casino</h3>
-        <p>Happy Ace Casino - Casino Game</p>
+        <div class="project-card-content">
+          <h3>Happy Ace Casino</h3>
+          <p>Multi-game casino ecosystem integration including Poker & Blackjack card logic systems.</p>
+          <div class="project-links">
+            <a href="https://www.happyace.in/" target="_blank">Visit Site</a>
+          </div>
+        </div>
       </div>
-      <div class="project-card" onclick="window.open('https://www.mahaveera.live/', '_blank')">
+
+      <div class="project-card">
         <img src="assets/imgs/mahaveeraResized.png" alt="Mahaveera">
-        <h3>Mahaveera</h3>
-        <p>Mahaveera - Casino Game</p>
+        <div class="project-card-content">
+          <h3>Mahaveera</h3>
+          <p>Full-featured multiplayer casino game with custom UI architecture and Socket.io integration.</p>
+          <div class="project-links">
+            <a href="https://www.mahaveera.live/" target="_blank">Visit Site</a>
+          </div>
+        </div>
       </div>
+
+      <div class="project-card">
+        <img src="https://img.freepik.com/free-vector/board-game-concept_23-2148658932.jpg" alt="Board & Casual Games">
+        <div class="project-card-content">
+          <h3>Board Games Suite (Ludo, Carrom, Tambola)</h3>
+          <p>Developed core game loops, turn timers, and multiplayer state sync for popular board games including Ludo, Carrom, Tambola, and Snake & Ladder.</p>
+        </div>
+      </div>
+
     </div>
   </section>
-  
+
+  <!-- Personal Projects -->
+  <section id="personal">
+    <h2>Personal Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img src="assets/imgs/3drollingball.png" alt="3D Rolling Ball">
+        <div class="project-card-content">
+          <h3>3D Rolling Ball</h3>
+          <p>Physics-based rolling ball obstacle game built to test Unity physics and movement systems.</p>
+          <div class="project-links">
+            <a href="https://github.com/kamal-game-studio/Simply-Pairs" target="_blank">GitHub</a>
+            <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank">Itch.io</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/imgs/turnbased.png" alt="Turn Based Game">
+        <div class="project-card-content">
+          <h3>Turn Based Adventure (C++)</h3>
+          <p>Strategy text-based adventure game implemented purely in C++ to showcase OOP mastery.</p>
+          <div class="project-links">
+            <a href="https://github.com/KamalSainiGames/Pokemon-Text-Based-Adventure-C-" target="_blank">GitHub / Replit</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/imgs/2dsnake.png" alt="2D Snake">
+        <div class="project-card-content">
+          <h3>2D Snake</h3>
+          <p>Classic arcade snake game recreated with grid-based movement logic in Unity.</p>
+          <div class="project-links">
+            <a href="https://github.com/kamal-game-studio/Simply-Pairs" target="_blank">GitHub</a>
+            <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank">Itch.io</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/imgs/monkey.png" alt="SimplyPairs">
+        <div class="project-card-content">
+          <h3>SimplyPairs</h3>
+          <p>Memory card matching game with UI animations and score management.</p>
+          <div class="project-links">
+            <a href="https://github.com/kamal-game-studio/Simply-Pairs" target="_blank">GitHub</a>
+            <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank">Itch.io</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <p>© 2026 Kamal Saini | Unity Game Developer</p>
-    <a href="https://github.com/KamalGameDev1"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/kamal-saini-106169173/"><i class="fab fa-linkedin"></i></a>
+    <div>
+      <a href="https://github.com/KamalSainiGames" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/kamal-saini-106169173/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:kamalkumar123096@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
   </footer>
 
   <script>
-    // Toggle menu
+    // Toggle mobile menu
     const toggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector("nav ul");
     toggle.addEventListener("click", () => { navLinks.classList.toggle("show"); });
 
-    // Animate project cards
+    // Animate project cards on scroll
     const cards = document.querySelectorAll(".project-card");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -347,19 +436,8 @@
           entry.target.classList.add("show");
         }
       });
-    }, { threshold:0.2 });
+    }, { threshold:0.15 });
     cards.forEach(card => observer.observe(card));
-
-    // Animate skills
-    const progresses = document.querySelectorAll(".progress");
-    const skillObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.style.width = entry.target.dataset.width;
-        }
-      });
-    }, { threshold:0.5 });
-    progresses.forEach(p => skillObserver.observe(p));
   </script>
 </body>
 </html>
