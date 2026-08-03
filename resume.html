@@ -1,137 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kamal Saini – Resume</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0a0a0a;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kamal Saini | Resume</title>
 
-    header {
-      background: #111;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid #444;
-    }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
+body{
+font-family:'Segoe UI',sans-serif;
+background:#0d1117;
+color:#f5f5f5;
+line-height:1.7;
+}
 
-    .resume-container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #1a1a1a;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-      animation: fadeInUp 1s ease;
-    }
+header{
+background:linear-gradient(135deg,#0066ff,#00bcd4);
+padding:40px 20px;
+text-align:center;
+}
 
-    h2 {
-      border-bottom: 2px solid #444;
-      padding-bottom: 5px;
-      margin-top: 30px;
-    }
+header h1{
+font-size:40px;
+margin-bottom:10px;
+}
 
-    a {
-      color: #4da6ff;
-      text-decoration: none;
-    }
+header p{
+font-size:18px;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+.container{
+width:90%;
+max-width:1000px;
+margin:40px auto;
+}
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+.card{
+background:#161b22;
+padding:30px;
+border-radius:15px;
+margin-bottom:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+transition:.4s;
+}
 
-    .btn-back {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #4da6ff;
-      color: #fff;
-      border-radius: 6px;
-      transition: all 0.3s;
-    }
+.card:hover{
+transform:translateY(-5px);
+}
 
-    .btn-back:hover {
-      background: #fff;
-      color: #4da6ff;
-    }
-  </style>
+h2{
+color:#58a6ff;
+margin-bottom:15px;
+border-bottom:2px solid #30363d;
+padding-bottom:8px;
+}
+
+ul{
+padding-left:20px;
+}
+
+li{
+margin:10px 0;
+}
+
+a{
+color:#58a6ff;
+text-decoration:none;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:15px;
+}
+
+.skill{
+background:#21262d;
+padding:10px 18px;
+border-radius:30px;
+border:1px solid #30363d;
+}
+
+.project{
+background:#21262d;
+padding:15px;
+border-radius:10px;
+margin-top:15px;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 30px;
+background:#238636;
+color:white;
+border-radius:8px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#2ea043;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#888;
+}
+
+@media(max-width:768px){
+
+header h1{
+font-size:30px;
+}
+
+.container{
+width:95%;
+}
+
+}
+</style>
+
 </head>
 <body>
 
 <header>
-  <h1>Kamal Saini – Resume</h1>
-  <p>Unity Game Developer | AR/VR & IoT Enthusiast</p>
+
+<h1>Kamal Saini</h1>
+
+<p>Unity Game Developer</p>
+
 </header>
 
-<div class="resume-container">
-  <h2>📞 Contact</h2>
-  <p><strong>Phone:</strong> +91 8445012907</p>
-  <p><strong>Email:</strong> <a href="mailto:kamal.gamedev96@gmail.com">kamal.gamedev96@gmail.com</a></p>
-  <p><strong>Location:</strong> Jaipur, Rajasthan (Current) | Meerut, U.P. (Native)</p>
-  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kamal-saini-106169173/" target="_blank">View Profile</a></p>
-  <p><strong>GitHub:</strong> <a href="https://github.com/KamalGameDev1" target="_blank">View Profile</a></p>
+<div class="container">
 
-  <h2>💼 Professional Summary</h2>
-  <p>Unity Game Developer with 2+ years of experience in mobile and desktop game development. Contributed to 5+ successful project launches and independently delivered 2 complete games. Skilled in Unity (incl. Unity 6), C#, UI systems, prefabs, animations, and performance optimization. Passionate about creating engaging gameplay experiences, especially in casual and mobile-first games. Ready to relocate for the right opportunity.</p>
+<div class="card">
 
-  <h2>🏢 Experience</h2>
-  <p><strong>Mobzway Technologies, Jaipur</strong><br>
-  <em>Unity Developer | April 2023 – Present</em></p>
-  <ul>
-    <li>Worked on 6+ interactive mobile and desktop games including Ludo, Tambola, Snake & Ladder.</li>
-    <li>Designed gameplay mechanics, prefabs, and UI systems.</li>
-    <li>Integrated APIs and optimized for mobile performance.</li>
-    <li>Applied best practices: ScriptableObjects, Singletons, Object Pooling.</li>
-    <li>Exploring Unity 6 features for future-ready projects.</li>
-  </ul>
+<h2>📞 Contact</h2>
 
-  <h2>🎓 Education</h2>
-  <ul>
-    <li><strong>B.Tech – Computer Science & Engineering</strong>, DIET Meerut (AKTU) | 2020</li>
-    <li><strong>Senior Secondary (12th)</strong>, D.N. Inter College, Meerut | 2015</li>
-    <li><strong>Secondary (10th)</strong>, K.K. Higher Secondary School, Meerut | 2012</li>
-  </ul>
+<p><b>Email :</b> kamalkumar123096@gmail.com</p>
 
-  <h2>🛠 Skills</h2>
-  <p><strong>Languages & Tools:</strong> C#, Unity (incl. Unity 6), GitHub</p>
-  <p><strong>Game Dev:</strong> UI, API Integration, Desktop/Mobile Games, Addressables, Prefabs, Animations, Physics</p>
-  <p><strong>Soft Skills:</strong> Team Collaboration, Project Ownership, Problem-Solving, Agile Workflow</p>
+<p><b>Phone :</b> +91 8445012907</p>
 
-  <h2>🏆 Achievements</h2>
-  <ul>
-    <li>Contributed to 5+ live game launches.</li>
-    <li>Independently built & released 2 casual games.</li>
-    <li>Recognized for clean, modular Unity architecture.</li>
-  </ul>
+<p><b>Location :</b> Meerut, U.P. (Current)</p>
 
-  <h2>🌍 Languages</h2>
-  <ul>
-    <li>Hindi: Native</li>
-    <li>English: Professional Proficiency</li>
-  </ul>
+<p><b>LinkedIn :</b>
 
-  <h2>✨ Interests</h2>
-  <p>AR/VR Development, IoT, Casual & Mobile Games, Problem-Solving</p>
+<a href="https://www.linkedin.com/in/kamal-saini-106169173/" target="_blank">
+View Profile
+</a>
 
-  <a href="index.html" class="btn-back">⬅ Back to Portfolio</a>
+</p>
+
+<p><b>GitHub :</b>
+
+<a href="https://github.com/KamalSainiGames" target="_blank">
+View GitHub
+</a>
+
+</p>
+
+<p><b>Portfolio :</b>
+
+<a href="https://kamalsainigames.github.io/portfolio/" target="_blank">
+Visit Portfolio
+</a>
+
+</p>
+
 </div>
+
+<div class="card">
+
+<h2>👨‍💻 Professional Summary</h2>
+
+<p>
+
+Unity Game Developer with 2.10 years of experience building mobile and PC games using Unity and C#. Skilled in gameplay systems, UI architecture, performance optimization, backend integrations, and multiplayer game systems. Experienced in developing casual, puzzle, board, and casino-style games. Proficient in ScriptableObjects, Object Pooling, Singleton, and modular game architecture. Passionate about creating scalable, high-performance games.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>💼 Experience</h2>
+
+<h3>Capsitech IT Services Pvt. Ltd. (GameWise) – Jodhpur</h3>
+
+<p><i>Game Developer | Oct 2025 – March 2026</i></p>
+
+<ul>
+
+<li>Developed 2D & 3D casual and puzzle games.</li>
+
+<li>Implemented gameplay systems and responsive UI.</li>
+
+<li>Built procedural obstacle generation systems.</li>
+
+<li>Optimized performance using Object Pooling.</li>
+
+<li>Created score tracking and restart systems.</li>
+
+</ul>
+
+<br>
+
+<h3>Mobzway Technologies LLP – Jaipur</h3>
+
+<p><i>Unity Developer | April 2023 – Oct 2025</i></p>
+
+<ul>
+
+<li>Worked on mobile and PC games.</li>
+
+<li>Developed multiplayer games including Ludo, Tambola, Snake & Ladder, Carrom, Poker & Blackjack systems.</li>
+
+<li>Implemented gameplay logic, timers, and UI.</li>
+
+<li>Integrated backend APIs and third-party SDKs.</li>
+
+<li>Optimized runtime performance using ScriptableObjects and Object Pooling.</li>
+
+<li>Worked closely with Designers, Artists and QA.</li>
+
+<li>Independently shipped complete Unity games.</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>🛠 Technical Skills</h2>
+
+<div class="skills">
+
+<div class="skill">C#</div>
+
+<div class="skill">OOP</div>
+
+<div class="skill">Unity Engine</div>
+
+<div class="skill">Unity 6</div>
+
+<div class="skill">2D Games</div>
+
+<div class="skill">3D Games</div>
+
+<div class="skill">Gameplay Systems</div>
+
+<div class="skill">Physics</div>
+
+<div class="skill">Unity UI</div>
+
+<div class="skill">Prefabs</div>
+
+<div class="skill">ScriptableObjects</div>
+
+<div class="skill">Singleton</div>
+
+<div class="skill">Object Pooling</div>
+
+<div class="skill">Android</div>
+
+<div class="skill">iOS</div>
+
+<div class="skill">Windows</div>
+
+<div class="skill">WebGL</div>
+
+<div class="skill">GitHub</div>
+
+<div class="skill">Socket.io</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🎮 Featured Games</h2>
+
+<div class="project">
+
+<h3>Ludo Multiplayer</h3>
+
+<p>Gameplay logic, multiplayer systems, API Integration and UI.</p>
+
+</div>
+
+<div class="project">
+
+<h3>Tambola</h3>
+
+<p>Real-time multiplayer gameplay with backend integration.</p>
+
+</div>
+
+<div class="project">
+
+<h3>Snake & Ladder</h3>
+
+<p>Complete gameplay mechanics and responsive UI.</p>
+
+</div>
+
+<div class="project">
+
+<h3>Carrom</h3>
+
+<p>Physics based board game with multiplayer support.</p>
+
+</div>
+
+<div class="project">
+
+<h3>Poker & Blackjack</h3>
+
+<p>Card gameplay systems and state management.</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🎓 Education</h2>
+
+<p>
+
+<b>B.Tech in Computer Science & Engineering</b><br>
+
+Delhi Institute of Engineering & Technology (AKTU)<br>
+
+2020
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>🌍 Interests</h2>
+
+<ul>
+
+<li>Casual & Mobile Games</li>
+
+<li>PC Games</li>
+
+<li>XR Development</li>
+
+</ul>
+
+</div>
+
+<a class="btn" href="index.html">
+⬅ Back to Portfolio
+</a>
+
+</div>
+
+<footer>
+
+© 2026 Kamal Saini | Unity Game Developer
+
+</footer>
 
 </body>
 </html>
