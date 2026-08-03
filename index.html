@@ -32,7 +32,7 @@
       --font-heading: 'Space Grotesk', sans-serif;
       --font-body: 'Inter', sans-serif;
       
-      --radius-card: 18px;
+      --radius-card: 14px;
     }
 
     /* ==========================================
@@ -50,8 +50,7 @@
       color: var(--text-main);
       scroll-behavior: smooth;
       overflow-x: hidden;
-      line-height: 1.6;
-      /* Subtle noise & ambient background glow */
+      line-height: 1.5;
       background-image: 
         radial-gradient(circle at 15% 15%, rgba(96, 165, 250, 0.08) 0%, transparent 40%),
         radial-gradient(circle at 85% 65%, rgba(167, 139, 250, 0.08) 0%, transparent 45%),
@@ -59,13 +58,11 @@
       background-attachment: fixed;
     }
 
-    /* Headings Overrides */
     h1, h2, h3, h4, .logo, .section-title {
       font-family: var(--font-heading);
       letter-spacing: -0.02em;
     }
 
-    /* Accessibility Focus States */
     a:focus-visible, button:focus-visible, input:focus-visible {
       outline: 2px solid var(--primary-gold);
       outline-offset: 4px;
@@ -81,31 +78,30 @@
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-subtle);
       display: flex; justify-content: space-between; align-items: center;
-      padding: 18px 6%; z-index: 1000;
+      padding: 16px 5%; z-index: 1000;
       transition: border-color 0.3s ease;
     }
     
     header .logo { 
-      font-size: 1.35rem; 
+      font-size: 1.25rem; 
       font-weight: 800; 
       color: var(--text-main);
       display: flex; align-items: center; gap: 4px;
     }
     header .logo span { color: var(--primary-gold); }
     
-    nav ul { display: flex; gap: 28px; list-style: none; align-items: center; }
+    nav ul { display: flex; gap: 24px; list-style: none; align-items: center; }
     
     nav ul li a {
       text-decoration: none; 
       color: var(--text-muted); 
       font-weight: 500; 
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       position: relative;
       padding: 4px 0;
       transition: color 0.3s ease;
     }
     
-    /* Smooth hover underline */
     nav ul li a::after {
       content: '';
       position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
@@ -116,32 +112,31 @@
     nav ul li a:hover { color: var(--text-main); }
     nav ul li a:hover::after { width: 100%; }
 
-    /* Primary Nav CTA */
     .nav-btn {
       background: var(--primary-gold) !important;
       color: #000 !important; 
-      padding: 10px 20px !important; 
+      padding: 8px 16px !important; 
       border-radius: 30px !important;
       font-weight: 700 !important; 
-      box-shadow: 0 0 20px var(--gold-glow);
+      box-shadow: 0 0 15px var(--gold-glow);
       transition: all 0.3s ease !important;
     }
     .nav-btn::after { display: none !important; }
     .nav-btn:hover { 
       transform: translateY(-2px); 
-      box-shadow: 0 0 28px rgba(245, 158, 11, 0.45);
+      box-shadow: 0 0 24px rgba(245, 158, 11, 0.45);
       background: #fbbf24 !important;
     }
 
-    .menu-toggle { display: none; font-size: 1.4rem; cursor: pointer; color: var(--text-main); }
+    .menu-toggle { display: none; font-size: 1.3rem; cursor: pointer; color: var(--text-main); }
 
     /* ==========================================
-       HERO SECTION (DARK GRADIENT & GEOMETRIC)
+       HERO SECTION
        ========================================== */
     .hero {
-      min-height: 100vh;
+      min-height: 90vh;
       display: flex; justify-content: center; align-items: center; text-align: center;
-      padding: 130px 20px 80px;
+      padding: 110px 20px 60px;
       position: relative;
       background: 
         radial-gradient(circle at 50% 30%, rgba(96, 165, 250, 0.12) 0%, transparent 60%),
@@ -149,7 +144,6 @@
       overflow: hidden;
     }
 
-    /* Light Grid Pattern Overlay */
     .hero::before {
       content: '';
       position: absolute; inset: 0;
@@ -164,27 +158,25 @@
 
     .hero-content { max-width: 800px; position: relative; z-index: 2; }
 
-    /* Floating Image Container */
     .profile-img-container {
-      position: relative; width: 140px; height: 140px; margin: 0 auto 28px;
+      position: relative; width: 120px; height: 120px; margin: 0 auto 20px;
       animation: float 6s ease-in-out infinite;
     }
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-8px); }
     }
 
     .profile-img-container img {
       width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
       border: 2px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
-    /* Glowing circular border */
     .profile-img-container::after {
-      content: ''; position: absolute; inset: -5px; border-radius: 50%;
+      content: ''; position: absolute; inset: -4px; border-radius: 50%;
       background: linear-gradient(135deg, var(--primary-gold), var(--secondary-blue), var(--accent-purple));
-      z-index: -1; filter: blur(10px); opacity: 0.7;
+      z-index: -1; filter: blur(8px); opacity: 0.7;
     }
 
     .badge-experience {
@@ -192,132 +184,138 @@
       background: rgba(245, 158, 11, 0.08);
       border: 1px solid rgba(245, 158, 11, 0.25); 
       color: var(--primary-gold);
-      padding: 6px 18px; border-radius: 30px; 
-      font-size: 0.82rem; font-weight: 600;
-      margin-bottom: 24px;
+      padding: 5px 14px; border-radius: 30px; 
+      font-size: 0.8rem; font-weight: 600;
+      margin-bottom: 20px;
       letter-spacing: 0.02em;
     }
 
     .hero-content h1 {
-      font-size: 3.8rem; font-weight: 800; margin-bottom: 14px;
+      font-size: 3.2rem; font-weight: 800; margin-bottom: 12px;
       background: linear-gradient(180deg, #FFFFFF 0%, #94A3B8 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       line-height: 1.1;
     }
     
     .hero-content p.subtitle { 
-      font-size: 1.2rem; color: var(--text-muted); 
-      margin-bottom: 35px; font-weight: 400;
+      font-size: 1.1rem; color: var(--text-muted); 
+      margin-bottom: 30px; font-weight: 400;
     }
 
-    .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-    /* AAA Buttons */
     .btn-primary {
       background: var(--primary-gold);
-      color: #0B1220; padding: 14px 32px; border-radius: 30px; font-weight: 700;
+      color: #0B1220; padding: 12px 26px; border-radius: 30px; font-weight: 700;
       text-decoration: none; transition: all 0.3s ease; 
-      box-shadow: 0 4px 20px var(--gold-glow);
-      font-size: 0.95rem;
+      box-shadow: 0 4px 15px var(--gold-glow);
+      font-size: 0.9rem;
     }
     .btn-primary:hover { 
-      transform: translateY(-3px); 
-      box-shadow: 0 8px 30px rgba(245, 158, 11, 0.45); 
+      transform: translateY(-2px); 
+      box-shadow: 0 6px 24px rgba(245, 158, 11, 0.45); 
       background: #fbbf24;
     }
 
     .btn-secondary {
       background: rgba(255, 255, 255, 0.03); 
       border: 1px solid var(--border-subtle);
-      color: var(--text-main); padding: 14px 32px; border-radius: 30px; font-weight: 600;
+      color: var(--text-main); padding: 12px 26px; border-radius: 30px; font-weight: 600;
       text-decoration: none; transition: all 0.3s ease; 
-      backdrop-filter: blur(10px); font-size: 0.95rem;
+      backdrop-filter: blur(10px); font-size: 0.9rem;
     }
     .btn-secondary:hover { 
       background: rgba(255, 255, 255, 0.08); 
       border-color: rgba(255, 255, 255, 0.25);
-      transform: translateY(-3px);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
     }
 
     /* ==========================================
-       STATS BAR (PREMIUM GLASS CARDS)
+       STATS BAR
        ========================================== */
     .stats-bar {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px; max-width: 1100px; margin: -40px auto 80px; padding: 0 20px; 
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; max-width: 900px; margin: -30px auto 60px; padding: 0 20px; 
       position: relative; z-index: 10;
     }
     .stat-box {
       background: var(--bg-glass); 
       border: 1px solid var(--border-subtle);
-      padding: 28px 20px; border-radius: var(--radius-card); text-align: center;
+      padding: 20px 14px; border-radius: var(--radius-card); text-align: center;
       backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
     }
     .stat-box:hover { 
-      transform: translateY(-6px); 
+      transform: translateY(-4px); 
       border-color: var(--border-hover);
-      box-shadow: 0 15px 35px rgba(245, 158, 11, 0.12);
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.12);
     }
     .stat-box h3 { 
-      font-size: 2.4rem; font-weight: 800; 
-      color: var(--primary-gold); margin-bottom: 4px; 
+      font-size: 2rem; font-weight: 800; 
+      color: var(--primary-gold); margin-bottom: 2px; 
     }
-    .stat-box p { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+    .stat-box p { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
 
     /* ==========================================
        SECTIONS SHARED STYLES
        ========================================== */
-    section { padding: 90px 6%; max-width: 1200px; margin: 0 auto; }
+    section { padding: 60px 4%; max-width: 1280px; margin: 0 auto; }
     
     section h2, .section-title {
-      font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; text-align: center;
+      font-size: 2rem; font-weight: 800; margin-bottom: 10px; text-align: center;
       color: var(--text-main);
     }
     .section-desc { 
       text-align: center; color: var(--text-muted); 
-      max-width: 650px; margin: 0 auto 50px; font-size: 0.98rem; 
+      max-width: 650px; margin: 0 auto 35px; font-size: 0.9rem; 
     }
 
     /* ==========================================
        ABOUT SECTION
        ========================================== */
     #about p {
-      max-width: 850px; margin: 0 auto; text-align: center; font-size: 1.1rem;
-      color: var(--text-muted); line-height: 1.8; font-weight: 400;
+      max-width: 850px; margin: 0 auto; text-align: center; font-size: 1rem;
+      color: var(--text-muted); line-height: 1.7; font-weight: 400;
     }
 
     /* ==========================================
-       SKILLS SECTION (REDESIGNED CARDS & BADGES)
+       SKILLS SECTION (EXPLICIT HEIGHT FIXED)
        ========================================== */
     .skills-container {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-      gap: 24px; margin-top: 20px;
+      display: grid; 
+      grid-template-columns: repeat(4, 1fr); 
+      gap: 16px; 
+      margin-top: 25px;
     }
     .skill-category {
       background: var(--bg-glass); 
       border: 1px solid var(--border-subtle);
-      padding: 28px; border-radius: var(--radius-card); 
+      padding: 25px 20px; 
+      border-radius: var(--radius-card); 
       backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
       transition: all 0.3s ease;
+      height: 240px; /* Explicit taller height */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
     .skill-category:hover { 
-      border-color: rgba(96, 165, 250, 0.3); 
+      border-color: rgba(96, 165, 250, 0.4); 
       background: var(--bg-glass-hover); 
       transform: translateY(-4px);
     }
     .skill-category h3 { 
-      color: var(--secondary-blue); font-size: 1.1rem; 
-      margin-bottom: 18px; font-weight: 700; 
+      color: var(--secondary-blue); font-size: 1.05rem; 
+      margin-bottom: 16px; font-weight: 700; 
     }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .skill-tags span {
-      background: rgba(255, 255, 255, 0.04); 
+      background: rgba(255, 255, 255, 0.05); 
       border: 1px solid var(--border-subtle);
-      color: var(--text-main); font-size: 0.8rem; padding: 6px 14px; 
-      border-radius: 20px; font-weight: 500; transition: all 0.2s ease;
+      color: var(--text-main); font-size: 0.8rem; padding: 6px 12px; 
+      border-radius: 18px; font-weight: 500; transition: all 0.2s ease;
     }
     .skill-tags span:hover {
       border-color: var(--secondary-blue);
@@ -325,25 +323,25 @@
     }
 
     /* ==========================================
-       EXPERIENCE TIMELINE (GLOWING LINE & CARDS)
+       EXPERIENCE TIMELINE
        ========================================== */
-    .timeline { position: relative; max-width: 850px; margin: 30px auto 0; }
+    .timeline { position: relative; max-width: 850px; margin: 20px auto 0; }
     .timeline::before {
       content: ''; position: absolute; left: 18px; top: 12px; bottom: 12px; width: 2px;
       background: linear-gradient(180deg, var(--primary-gold), var(--secondary-blue), transparent);
     }
-    .timeline-item { position: relative; padding-left: 50px; margin-bottom: 45px; }
+    .timeline-item { position: relative; padding-left: 45px; margin-bottom: 35px; }
     
     .timeline-dot {
-      position: absolute; left: 10px; top: 6px; width: 18px; height: 18px;
+      position: absolute; left: 10px; top: 6px; width: 16px; height: 16px;
       border-radius: 50%; background: var(--bg-dark); 
       border: 3px solid var(--primary-gold);
-      box-shadow: 0 0 12px var(--primary-gold);
+      box-shadow: 0 0 10px var(--primary-gold);
     }
     
     .timeline-card {
       background: var(--bg-glass); border: 1px solid var(--border-subtle);
-      padding: 28px; border-radius: var(--radius-card); 
+      padding: 22px; border-radius: var(--radius-card); 
       backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
       transition: all 0.3s ease;
     }
@@ -351,114 +349,153 @@
       border-color: var(--border-hover);
       transform: translateX(4px);
     }
-    .timeline-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--text-main); }
-    .timeline-card .company { color: var(--primary-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
-    .timeline-card .date { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 14px; display: block; font-weight: 500; }
-    .timeline-card ul { padding-left: 18px; color: var(--text-muted); font-size: 0.92rem; }
-    .timeline-card ul li { margin-bottom: 8px; }
+    .timeline-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
+    .timeline-card .company { color: var(--primary-gold); font-weight: 600; font-size: 0.88rem; margin-bottom: 2px; }
+    .timeline-card .date { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 10px; display: block; font-weight: 500; }
+    .timeline-card ul { padding-left: 16px; color: var(--text-muted); font-size: 0.85rem; }
+    .timeline-card ul li { margin-bottom: 6px; }
 
     /* ==========================================
-       PROJECTS GRID (ELEVATED CARDS & SPACING)
+       PROJECTS GRID
        ========================================== */
     .projects-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-      gap: 28px; margin-top: 30px;
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+      gap: 18px; 
+      margin-top: 20px;
     }
     
     .project-card {
       background: var(--bg-glass); border: 1px solid var(--border-subtle);
       border-radius: var(--radius-card); overflow: hidden; 
       display: flex; flex-direction: column;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
-      opacity: 0; transform: translateY(30px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+      opacity: 0; transform: translateY(20px);
     }
     
     .project-card.show { opacity: 1; transform: translateY(0); }
     
     .project-card:hover {
-      transform: translateY(-8px); 
+      transform: translateY(-5px); 
       border-color: var(--border-hover);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(245, 158, 11, 0.1);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(245, 158, 11, 0.1);
     }
 
-    /* Blank / Missing Image Fallback Fix */
-    .project-card img {
-      width: 100%; height: 200px; object-fit: cover;
+    /* Fixed Image Container */
+    .project-card-img-wrapper {
+      width: 100%;
+      height: 130px;
+      background: rgba(0, 0, 0, 0.2);
       border-bottom: 1px solid var(--border-subtle);
-      background: rgba(255, 255, 255, 0.02);
-      display: block;
-      transition: transform 0.5s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.4s ease;
     }
     
     .project-card:hover img {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
 
-    .project-card img[src=""], .project-card img:not([src]) {
-      position: relative;
-    }
-    .project-card img[src=""]::before, .project-card img:not([src])::before {
-      content: '🎮 Game Preview';
-      display: flex; align-items: center; justify-content: center;
-      width: 100%; height: 100%; background: #111827; color: var(--text-muted);
-      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em;
+    /* Dedicated Placeholder for Missing Images (Tower Defense Fix) */
+    .no-image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
     }
 
-    .project-card-content { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
-    .project-card-content h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main); }
-    .project-card-content p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 22px; flex-grow: 1; line-height: 1.6; }
+    .project-card-content { padding: 18px; display: flex; flex-direction: column; flex-grow: 1; }
+    .project-card-content h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; color: var(--text-main); }
+    .project-card-content p { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 16px; flex-grow: 1; line-height: 1.5; }
 
-    .project-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+    .project-links { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; }
     
     .project-links a {
-      flex: 1; text-align: center; text-decoration: none; padding: 10px 16px;
-      border-radius: 10px; font-size: 0.85rem; font-weight: 600; 
+      flex: 1; text-align: center; text-decoration: none; padding: 7px 10px;
+      border-radius: 8px; font-size: 0.78rem; font-weight: 600; 
       transition: all 0.3s ease;
       background: rgba(255, 255, 255, 0.04); 
       border: 1px solid var(--border-subtle); 
       color: var(--text-main);
+      white-space: nowrap;
     }
     .project-links a:hover { 
       background: var(--primary-gold); 
       border-color: var(--primary-gold); 
       color: #0B1220; 
-      box-shadow: 0 0 15px var(--gold-glow);
+      box-shadow: 0 0 12px var(--gold-glow);
     }
+
+    .company-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+      width: fit-content;
+    }
+    .company-badge.capsitech { background: rgba(167, 139, 250, 0.15); color: var(--accent-purple); border: 1px solid rgba(167, 139, 250, 0.3); }
+    .company-badge.mobzway { background: rgba(96, 165, 250, 0.15); color: var(--secondary-blue); border: 1px solid rgba(96, 165, 250, 0.3); }
 
     /* ==========================================
        FOOTER
        ========================================== */
     footer {
       border-top: 1px solid var(--border-subtle); 
-      padding: 45px 6%; text-align: center; 
-      color: var(--text-muted); font-size: 0.9rem;
+      padding: 35px 5%; text-align: center; 
+      color: var(--text-muted); font-size: 0.85rem;
       background: rgba(11, 18, 32, 0.9);
+      margin-top: 40px;
     }
-    footer div { margin-top: 18px; display: flex; justify-content: center; gap: 24px; }
+    footer div { margin-top: 14px; display: flex; justify-content: center; gap: 16px; }
     footer div a { 
-      color: var(--text-muted); font-size: 1.35rem; 
+      color: var(--text-muted); font-size: 1.1rem; 
       transition: all 0.3s ease; 
       display: inline-flex; align-items: center; justify-content: center;
-      width: 42px; height: 42px; border-radius: 50%;
+      width: 36px; height: 36px; border-radius: 50%;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--border-subtle);
     }
     footer div a:hover { 
       color: var(--primary-gold); 
       border-color: var(--primary-gold);
-      transform: translateY(-3px);
-      box-shadow: 0 0 15px var(--gold-glow);
+      transform: translateY(-2px);
+      box-shadow: 0 0 12px var(--gold-glow);
     }
 
     /* ==========================================
        RESPONSIVE DESIGN
        ========================================== */
-    @media(max-width: 768px) {
-      .hero-content h1 { font-size: 2.6rem; }
+    @media(max-width: 1024px) {
+      .skills-container { grid-template-columns: repeat(2, 1fr); }
+      .stats-bar { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media(max-width: 600px) {
+      .skills-container, .stats-bar { grid-template-columns: 1fr; }
+      .hero-content h1 { font-size: 2.2rem; }
       nav ul {
         display: none; flex-direction: column; position: absolute;
-        top: 68px; right: 6%; background: #111827; 
-        padding: 24px; border-radius: var(--radius-card); 
+        top: 60px; right: 5%; background: #111827; 
+        padding: 20px; border-radius: var(--radius-card); 
         border: 1px solid var(--border-subtle);
         box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       }
@@ -478,8 +515,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#capsitech">Capsitech</a></li>
-        <li><a href="#mobzway">Mobzway</a></li>
+        <li><a href="#featured-projects">Company Projects</a></li>
         <li><a href="#personal">Personal</a></li>
         <li><a href="https://drive.google.com/file/d/1vcOTiyobKaMc14o6VgkzmNBrQGrN6E4R/view?usp=drive_link" class="nav-btn" target="_blank"><i class="fas fa-file-download"></i> Resume</a></li>
       </ul>
@@ -497,7 +533,7 @@
       <p class="subtitle">Unity Game Developer specializing in 2D/3D Mobile, PC & Multiplayer Games</p>
       
       <div class="hero-ctas">
-        <a href="#personal" class="btn-primary">View Projects</a>
+        <a href="#featured-projects" class="btn-primary">View Projects</a>
         <a href="mailto:kamalkumar123096@gmail.com" class="btn-secondary"><i class="fas fa-envelope"></i> Get In Touch</a>
       </div>
     </div>
@@ -523,11 +559,15 @@
   <section id="about">
     <h2 class="section-title">About Me</h2>
     <p>
-      Unity Game Developer with 2 Years 10 Months of experience designing gameplay architecture, UI systems, and backend integrations. Passionate about building modular, highly scalable systems using ScriptableObjects, Object Pooling, and clean Architechture.
+        Unity Game Developer with 2.10 years of experience building mobile and PC games using Unity and C#. Skilled in 
+        gameplay systems, UI architecture, performance optimization, and backend integrations. Experienced in 
+        developing casual, puzzle, board, and multiplayer game systems. Proficient in clean architecture practices 
+        including ScriptableObjects, Object Pooling, and modular game systems. Passionate about creating scalable, 
+        high-performance games and continuously improving game development skills. 
     </p>
   </section>
 
-  <!-- Skills -->
+  <!-- Technical Skills (Explicit Height: 240px) -->
   <section id="skills">
     <h2>Technical Skills</h2>
     <div class="skills-container">
@@ -546,8 +586,8 @@
         <h3>Game Development</h3>
         <div class="skill-tags">
           <span>Unity 6</span>
-          <span>2D/3D Development</span>
-          <span>Gameplay Systems</span>
+          <span>2D/3D Dev</span>
+          <span>Gameplay</span>
           <span>Physics</span>
           <span>Unity UI</span>
           <span>Prefabs</span>
@@ -555,23 +595,21 @@
       </div>
 
       <div class="skill-category">
-        <h3>Architecture & Optimization</h3>
+        <h3>Architecture & Opt.</h3>
         <div class="skill-tags">
           <span>ScriptableObjects</span>
-          <span>Singleton Architecture</span>
+          <span>Singleton</span>
           <span>Object Pooling</span>
-          <span>Performance Tuning</span>
+          <span>Performance</span>
         </div>
       </div>
 
       <div class="skill-category">
-        <h3>Platforms & Networking</h3>
+        <h3>Platforms & Net.</h3>
         <div class="skill-tags">
-          <span>Android</span>
-          <span>iOS</span>
-          <span>Windows</span>
-          <span>WebGL</span>
-          <span>Socket.io (Multiplayer)</span>
+          <span>Android / iOS</span>
+          <span>Windows / WebGL</span>
+          <span>Socket.io</span>
           <span>REST APIs</span>
         </div>
       </div>
@@ -608,7 +646,7 @@
           <span class="date">April 2023 – Oct 2025</span>
           <ul>
             <li>Developed multiplayer board & card games (Ludo, Tambola, Snake & Ladder, Carrom, Poker, Blackjack).</li>
-            <li>Handled REST APIs & Socket.io integrations for real-time multiplayer card sync and timers[.</li>
+            <li>Handled REST APIs & Socket.io integrations for real-time multiplayer card sync and timers.</li>
             <li>Fixed critical crashes and optimized runtime builds using ScriptableObjects and Object Pooling.</li>
           </ul>
         </div>
@@ -617,21 +655,24 @@
     </div>
   </section>
 
-  <!-- Capsitech Projects -->
-  <section id="capsitech">
-    <h2>Projects with Capsitech (GameWise)</h2>
+  <!-- Company Projects -->
+  <section id="featured-projects">
+    <h2>Company Projects</h2>
+    <p class="section-desc">Professional titles developed at Capsitech & Mobzway Technologies</p>
+
     <div class="projects-grid">
       
       <div class="project-card">
-        <img src="assets/imgs/Pebble Trace.png" alt="Pebble Trace">
+        <div class="project-card-img-wrapper">
+          <img src="assets/imgs/Pebble Trace.png" alt="Pebble Trace">
+        </div>
         <div class="project-card-content">
+          <span class="company-badge capsitech">Capsitech</span>
           <h3>Pebble Trace</h3>
-          <p>
-            Relaxing puzzle game where players connect matching colored pebbles to solve levels. Designed responsive UI flows, score tracking, and efficient mobile update loops.
-          </p>
+          <p>Relaxing puzzle game connecting colored pebbles. Optimized mobile update loops & responsive UI.</p>
           <div class="project-links">
             <a href="https://play.google.com/store/apps/details?id=com.TheGameWise.PebbleTrace&pcampaignid=web_share" target="_blank">
-              <i class="fab fa-google-play"></i> Google Play
+              <i class="fab fa-google-play"></i> Play Store
             </a>
             <a href="https://apps.apple.com/in/app/pebble-trace/id6757587390" target="_blank">
               <i class="fab fa-apple"></i> App Store
@@ -640,119 +681,125 @@
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- Mobzway Projects -->
-  <section id="mobzway">
-    <h2>Projects with Mobzway Technologies</h2>
-    <div class="projects-grid">
-
       <div class="project-card">
-        <img src="assets/imgs/ttp.png" alt="Top Teen Patti">
+        <div class="project-card-img-wrapper">
+          <img src="assets/imgs/ttp.png" alt="Top Teen Patti">
+        </div>
         <div class="project-card-content">
+          <span class="company-badge mobzway">Mobzway</span>
           <h3>Top Teen Patti</h3>
-          <p>Multiplayer casino card game featuring real-time room joining, state management, and API integrations.</p>
+          <p>Multiplayer casino card game featuring real-time room joining and state management.</p>
           <div class="project-links">
-            <a href="https://topteenpatti.net/" target="_blank">Visit Site</a>
+            <a href="https://topteenpatti.net/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit Site</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <img src="assets/imgs/hac.png" alt="Happy Ace Casino">
+        <div class="project-card-img-wrapper">
+          <img src="assets/imgs/hac.png" alt="Happy Ace Casino">
+        </div>
         <div class="project-card-content">
+          <span class="company-badge mobzway">Mobzway</span>
           <h3>Happy Ace Casino</h3>
           <p>Multi-game casino ecosystem integration including Poker & Blackjack card logic systems.</p>
           <div class="project-links">
-            <a href="https://www.happyace.in/" target="_blank">Visit Site</a>
+            <a href="https://www.happyace.in/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit Site</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <img src="assets/imgs/mahaveeraResized.png" alt="Mahaveera">
+        <div class="project-card-img-wrapper">
+          <img src="assets/imgs/mahaveeraResized.png" alt="Mahaveera">
+        </div>
         <div class="project-card-content">
+          <span class="company-badge mobzway">Mobzway</span>
           <h3>Mahaveera</h3>
-          <p>Full-featured multiplayer casino game with custom UI architecture and Socket.io integration.</p>
+          <p>Full-featured multiplayer casino game with custom UI architecture & Socket.io integration.</p>
           <div class="project-links">
-            <a href="https://www.mahaveera.live/" target="_blank">Visit Site</a>
+            <a href="https://www.mahaveera.live/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit Site</a>
           </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="" alt="Board & Casual Games">
-        <div class="project-card-content">
-          <h3>Board Games Suite (Ludo, Carrom, Tambola)</h3>
-          <p>Developed core game loops, turn timers, and multiplayer state sync for popular board games including Ludo, Carrom, Tambola, and Snake & Ladder.</p>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Personal Projects -->
+  <!-- Personal Projects (Explicitly Includes 3D Tower Defence) -->
   <section id="personal">
     <h2>Personal Projects</h2>
+    <p class="section-desc">Independent prototypes, tools, and gameplay mechanics</p>
+
     <div class="projects-grid">
 
       <div class="project-card">
-        <img src="assets/imgs/3drollingball.png" alt="3D Rolling Ball">
+        <div class="project-card-img-wrapper">
+          <img src="assets/imgs/3drollingball.png" alt="3D Rolling Ball">
+        </div>
         <div class="project-card-content">
           <h3>3D Rolling Ball</h3>
           <p>Physics-based rolling ball obstacle game built to test Unity physics and movement systems.</p>
           <div class="project-links">
-            <a href="https://github.com/KamalSainiGames/Roll-The-Ball" target="_blank">GitHub</a>
+            <a href="https://github.com/KamalSainiGames/Roll-The-Ball" target="_blank"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <img src="assets/imgs/turnbased.png" alt="Turn Based Game">
+        <div class="project-card-img-wrapper">
+          <img src="assets/imgs/turnbased.png" alt="Turn Based Game">
+        </div>
         <div class="project-card-content">
-          <h3>Turn Based Adventure (C++)</h3>
+          <h3>Turn Based (C++)</h3>
           <p>Strategy text-based adventure game implemented purely in C++ to showcase OOP mastery.</p>
           <div class="project-links">
-            <a href="https://github.com/KamalSainiGames/Pokemon-Text-Based-Adventure-C-" target="_blank">GitHub</a>
+            <a href="https://github.com/KamalSainiGames/Pokemon-Text-Based-Adventure-C-" target="_blank"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <img src="assets/imgs/2dsnake.png" alt="2D Snake">
+        <div class="project-card-img-wrapper">
+          <img src="assets/imgs/2dsnake.png" alt="2D Snake">
+        </div>
         <div class="project-card-content">
           <h3>2D Snake</h3>
           <p>Classic arcade snake game recreated with grid-based movement logic in Unity.</p>
           <div class="project-links">
-            <a href="https://github.com/KamalSainiGames/Snake2dgame" target="_blank">GitHub</a>
+            <a href="https://github.com/KamalSainiGames/Snake2dgame" target="_blank"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <img src="assets/imgs/monkey.png" alt="SimplyPairs">
+        <div class="project-card-img-wrapper">
+          <img src="assets/imgs/monkey.png" alt="SimplyPairs">
+        </div>
         <div class="project-card-content">
           <h3>SimplyPairs</h3>
           <p>Memory card matching game with UI animations and score management.</p>
           <div class="project-links">
-            <a href="https://github.com/kamal-game-studio/Simply-Pairs" target="_blank">GitHub</a>
-            <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank">Itch.io</a>
+            <a href="https://github.com/kamal-game-studio/Simply-Pairs" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank"><i class="fas fa-gamepad"></i> Itch.io</a>
           </div>
         </div>
       </div>
 
+      <!-- 3D TOWER DEFENCE (VISIBLE WITH PLACEHOLDER) -->
       <div class="project-card">
-        <img src="" alt="3D Tower Defence">
+        <div class="project-card-img-wrapper">
+          <div class="no-image-placeholder">🎮 3D Tower Defence</div>
+        </div>
         <div class="project-card-content">
           <h3>3D Tower Defence</h3>
-          <p>3D Tower Defence game in Unity where enemies follow a fixed path toward the player’s base. The player places towers that automatically attack enemies, stopping them from reaching the goal.</p>
+          <p>3D Tower Defence game where enemies follow a fixed path and turrets auto-target & attack them.</p>
           <div class="project-links">
-            <a href="https://github.com/KamalSainiGames/Unity-3D-Tower-Defence" target="_blank">GitHub</a>
+            <a href="https://github.com/KamalSainiGames/Unity-3D-Tower-Defence" target="_blank"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
       </div>
-      
+
     </div>
   </section>
 
@@ -780,7 +827,7 @@
           entry.target.classList.add("show");
         }
       });
-    }, { threshold:0.15 });
+    }, { threshold:0.1 });
     cards.forEach(card => observer.observe(card));
   </script>
 </body>
