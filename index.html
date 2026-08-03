@@ -3,419 +3,490 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kamal Saini | Unity Game Developer Portfolio</title>
+  <title>Kamal Saini | Unity Game Developer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif; }
+    :root {
+      --bg-dark: #09090b;
+      --bg-card: rgba(24, 24, 27, 0.7);
+      --bg-card-hover: rgba(39, 39, 42, 0.8);
+      --accent-purple: #8b5cf6;
+      --accent-amber: #f59e0b;
+      --accent-glow: rgba(139, 92, 246, 0.25);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --text-main: #f4f4f5;
+      --text-muted: #a1a1aa;
+    }
 
-    body { background:#0e0e0e; color:#fff; scroll-behavior:smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
 
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Lovable Glass Header */
     header {
       position: fixed; top: 0; left: 0; width: 100%;
-      background: rgba(20,20,20,0.95);
-      border-bottom: 1px solid #333;
-      display:flex; justify-content:space-between; align-items:center;
-      padding:15px 40px; z-index:1000;
+      background: rgba(9, 9, 11, 0.75);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 5%; z-index: 1000;
     }
-    header .logo { font-size:1.5rem; font-weight:700; color:#f39c12; }
-    nav ul { display:flex; gap:25px; list-style:none; }
+    header .logo { font-size: 1.4rem; font-weight: 800; tracking: -0.02em; color: #fff; }
+    header .logo span { color: var(--accent-purple); }
+    
+    nav ul { display: flex; gap: 28px; list-style: none; align-items: center; }
     nav ul li a {
-      text-decoration:none; color:#fff; font-weight:500;
-      transition: color 0.3s;
+      text-decoration: none; color: var(--text-muted); font-weight: 500; font-size: 0.95rem;
+      transition: all 0.3s ease;
     }
-    nav ul li a:hover { color:#f39c12; }
-    .menu-toggle { display:none; font-size:1.8rem; cursor:pointer; }
+    nav ul li a:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+    .nav-btn {
+      background: linear-gradient(135deg, var(--accent-purple), #6366f1);
+      color: #fff !important; padding: 8px 18px; border-radius: 20px;
+      font-weight: 600 !important; box-shadow: 0 0 15px var(--accent-glow);
+    }
+    .nav-btn:hover { transform: translateY(-2px); }
 
-    /* Hero */
+    .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--text-main); }
+
+    /* Hero Section */
     .hero {
-      height:100vh;
-      background:url("https://img.freepik.com/free-vector/gradient-gaming-background_23-2149908953.jpg") center/cover no-repeat;
-      display:flex; justify-content:center; align-items:center; text-align:center;
-      padding:20px;
+      min-height: 100vh;
+      display: flex; justify-content: center; align-items: center; text-align: center;
+      padding: 120px 20px 60px;
+      background: radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.15), transparent 60%);
+      position: relative;
     }
-    .hero-content img {
-      width:180px; height:180px; border-radius:50%;
-      border:4px solid #f39c12; margin-bottom:20px; object-fit:cover;
+    .hero-content { max-width: 800px; }
+    .profile-img-container {
+      position: relative; width: 150px; height: 150px; margin: 0 auto 25px;
     }
-    .hero-content h1 { font-size:3rem; margin-bottom:10px; }
-    .hero-content p { font-size:1.4rem; margin-bottom:10px; }
-    .hero-subtitle { font-size:1.1rem !important; color:#e0e0e0; margin-bottom:25px !important; }
-    .btn {
-      background:#f39c12; color:#fff; padding:12px 24px; border:none;
-      border-radius:25px; cursor:pointer; text-decoration:none;
-      transition: all 0.3s; font-weight: 500; display: inline-block;
+    .profile-img-container img {
+      width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+      border: 2px solid var(--border-color);
     }
-    .btn:hover { background:#d35400; transform:translateY(-3px); }
-
-    /* Stats Section */
-    #stats { padding:40px 40px; background:#141414; border-bottom:1px solid #222; }
-    .stats-container {
-      display:flex; justify-content:space-around; flex-wrap:wrap;
-      max-width:1200px; margin:0 auto; gap:20px;
+    .profile-img-container::after {
+      content: ''; position: absolute; inset: -4px; border-radius: 50%;
+      background: linear-gradient(45deg, var(--accent-purple), var(--accent-amber));
+      z-index: -1; filter: blur(8px); opacity: 0.6;
     }
-    .stat-card { text-align:center; flex:1; min-width:200px; padding:15px; }
-    .stat-card h2 { color:#f39c12; font-size:2.5rem; margin-bottom:5px; }
-    .stat-card p { color:#ccc; font-size:1rem; }
-
-    /* Sections */
-    section { padding:80px 40px; }
-    h2 { text-align:center; font-size:2rem; margin-bottom:40px; color:#f39c12; }
-
-    /* About */
-    #about p {
-      max-width:850px; margin:0 auto;
-      text-align:center; font-size:1.1rem;
-      line-height:1.8; color:#ccc;
+    
+    .badge-experience {
+      display: inline-block; background: rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.3); color: #c084fc;
+      padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;
+      margin-bottom: 20px;
     }
 
-    /* Skills Grid */
-    .skills-container {
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap:25px; max-width:1200px; margin:0 auto;
+    .hero-content h1 {
+      font-size: 3.5rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .skill-category {
-      background:#1a1a1a; padding:25px; border-radius:10px;
-      border:1px solid #333;
+    .hero-content p.subtitle { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 30px; }
+    
+    .hero-ctas { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-purple), #6366f1);
+      color: #fff; padding: 14px 28px; border-radius: 30px; font-weight: 600;
+      text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 20px var(--accent-glow);
     }
-    .skill-category h3 { color:#f39c12; margin-bottom:15px; font-size:1.2rem; }
-    .skill-tags { display:flex; flex-wrap:wrap; gap:10px; }
-    .skill-tags span {
-      background:#2a2a2a; border:1px solid #444; color:#fff;
-      padding:6px 12px; border-radius:15px; font-size:0.85rem;
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(139, 92, 246, 0.4); }
+
+    .btn-secondary {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      color: var(--text-main); padding: 14px 28px; border-radius: 30px; font-weight: 600;
+      text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(10px);
+    }
+    .btn-secondary:hover { background: var(--bg-card-hover); border-color: rgba(255,255,255,0.2); }
+
+    /* Stats Grid */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px; max-width: 1100px; margin: -40px auto 80px; padding: 0 20px; position: relative; z-index: 10;
+    }
+    .stat-box {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      padding: 25px 20px; border-radius: 16px; text-align: center;
+      backdrop-filter: blur(12px); transition: transform 0.3s ease;
+    }
+    .stat-box:hover { transform: translateY(-5px); border-color: rgba(139, 92, 246, 0.4); }
+    .stat-box h3 { font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .stat-box p { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+
+    /* Sections Shared */
+    section { padding: 90px 5%; max-width: 1200px; margin: 0 auto; }
+    .section-title {
+      font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; text-align: center;
+    }
+    .section-desc { text-align: center; color: var(--text-muted); max-width: 650px; margin: 0 auto 50px; font-size: 1rem; }
+
+    /* Skills Lovable Cards */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .skill-card {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      padding: 25px; border-radius: 16px; transition: all 0.3s;
+    }
+    .skill-card:hover { border-color: rgba(139, 92, 246, 0.3); background: var(--bg-card-hover); }
+    .skill-card h4 { font-size: 1.1rem; color: var(--accent-amber); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+    .tag-container { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-container span {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text-main); font-size: 0.8rem; padding: 5px 12px; border-radius: 20px;
     }
 
-    /* Project Grids */
+    /* Experience Timeline */
+    .timeline { position: relative; max-width: 850px; margin: 0 auto; }
+    .timeline::before {
+      content: ''; position: absolute; left: 18px; top: 10px; bottom: 10px; width: 2px;
+      background: linear-gradient(180deg, var(--accent-purple), transparent);
+    }
+    .timeline-item { position: relative; padding-left: 50px; margin-bottom: 40px; }
+    .timeline-dot {
+      position: absolute; left: 10px; top: 5px; width: 18px; height: 18px;
+      border-radius: 50%; background: var(--accent-purple); box-shadow: 0 0 10px var(--accent-purple);
+    }
+    .timeline-card {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      padding: 25px; border-radius: 16px;
+    }
+    .timeline-card h3 { font-size: 1.25rem; font-weight: 700; color: #fff; }
+    .timeline-card .company { color: var(--accent-purple); font-weight: 600; font-size: 0.95rem; margin-bottom: 6px; }
+    .timeline-card .date { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px; display: block; }
+    .timeline-card ul { padding-left: 18px; color: var(--text-muted); font-size: 0.9rem; }
+    .timeline-card ul li { margin-bottom: 6px; }
+
+    /* Project Cards Modern Grid */
     .projects-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
-      gap:28px; justify-content:center; align-items:start;
-      max-width:1200px; margin:0 auto; padding:0 10px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px;
     }
-
     .project-card {
-      background:#1e1e1e; border:1px solid #333;
-      border-radius:12px; overflow:hidden;
-      transition: all 0.3s ease; opacity:0; transform: translateY(40px);
-      align-self:stretch; display:flex; flex-direction:column;
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;
+      transition: all 0.3s ease;
     }
+    .project-card:hover { transform: translateY(-6px); border-color: rgba(139, 92, 246, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .project-card img { width: 100%; height: 190px; object-fit: cover; border-bottom: 1px solid var(--border-color); }
+    .project-info { padding: 22px; display: flex; flex-direction: column; flex-grow: 1; }
+    .project-info h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
+    .project-info p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 15px; flex-grow: 1; }
+    
+    .tech-stack-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+    .tech-stack-badges span { font-size: 0.75rem; background: rgba(139, 92, 246, 0.1); color: #c084fc; padding: 3px 10px; border-radius: 12px; }
 
-    .project-card img {
-      width:100%; height:auto; aspect-ratio:16/9;
-      object-fit:cover; background:#111; border-bottom:1px solid #333;
+    .project-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .project-actions a {
+      flex: 1; text-align: center; text-decoration: none; padding: 8px 12px;
+      border-radius: 8px; font-size: 0.82rem; font-weight: 600; transition: 0.2s;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-main);
     }
+    .project-actions a:hover { background: var(--accent-purple); border-color: var(--accent-purple); color: #fff; }
 
-    .project-card-content { padding:20px; display:flex; flex-direction:column; flex-grow:1; }
-    .project-card h3 { margin-bottom:10px; color:#f39c12; text-align:center; }
-    .project-card p { font-size:0.95rem; color:#ccc; text-align:center; flex-grow:1; margin-bottom:15px; }
-    .project-links { text-align:center; margin-top:auto; }
-    .project-links a {
-      display:inline-block; margin:5px; padding:8px 15px; border-radius:20px;
-      text-decoration:none; font-size:0.9rem; background:#333; color:#fff;
-      transition:all 0.3s;
+    /* Contact Form */
+    .contact-container {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      padding: 40px; border-radius: 20px; max-width: 700px; margin: 0 auto;
     }
-    .project-links a:hover { background:#f39c12; color:#000; }
-    .project-card.show { opacity:1; transform:translateY(0); transition:all 0.6s ease; }
-    .project-card:hover { box-shadow:0 8px 20px rgba(243,156,18,0.3); border:1px solid #f39c12; transform:translateY(-5px); }
-
-    /* Responsive Layouts */
-    @media (min-width: 1025px) {
-      .projects-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
+    .form-group input, .form-group textarea {
+      width: 100%; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color);
+      padding: 12px 16px; border-radius: 10px; color: #fff; font-size: 0.95rem; outline: none;
     }
-
-    @media (max-width: 1024px) and (min-width: 601px) {
-      .projects-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
-    }
-
-    @media (max-width: 600px) {
-      .projects-grid { grid-template-columns: 1fr; gap:20px; }
-      .project-card img { aspect-ratio: 16/9; }
-      .project-card h3 { font-size:1.1rem; }
-    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent-purple); }
 
     /* Footer */
     footer {
-      background:#111; border-top:1px solid #333;
-      text-align:center; padding:25px;
+      border-top: 1px solid var(--border-color); padding: 30px 5%;
+      text-align: center; color: var(--text-muted); font-size: 0.85rem;
     }
-    footer p { color:#888; margin-bottom:10px; }
-    footer a { color:#f39c12; margin:0 12px; font-size:1.4rem; transition:0.3s; }
-    footer a:hover { color:#fff; }
+    footer .socials { margin-top: 15px; display: flex; justify-content: center; gap: 20px; }
+    footer .socials a { color: var(--text-muted); font-size: 1.2rem; transition: 0.2s; }
+    footer .socials a:hover { color: var(--accent-purple); }
 
-    /* Mobile Navigation */
-    @media(max-width:768px) {
+    @media(max-width: 768px) {
+      .hero-content h1 { font-size: 2.5rem; }
       nav ul {
-        display:none; flex-direction:column; position:absolute;
-        top:60px; right:40px; background:#222;
-        padding:15px; border-radius:10px; width:200px; border:1px solid #333;
+        display: none; flex-direction: column; position: absolute;
+        top: 65px; right: 5%; background: #121215; padding: 20px; border-radius: 12px; border: 1px solid var(--border-color);
       }
-      nav ul.show { display:flex; }
-      .menu-toggle { display:block; color:#fff; }
+      nav ul.show { display: flex; }
+      .menu-toggle { display: block; }
     }
   </style>
 </head>
 <body>
+
+  <!-- Navigation -->
   <header>
-    <div class="logo">Kamal Saini</div>
+    <div class="logo">Kamal<span>.dev</span></div>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <nav>
       <ul>
-        <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#capsitech">Capsitech</a></li>
-        <li><a href="#mobzway">Mobzway</a></li>
-        <li><a href="#personal">Personal</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://drive.google.com/file/d/1vcOTiyobKaMc14o6VgkzmNBrQGrN6E4R/view?usp=drive_link" class="nav-btn" target="_blank"><i class="fas fa-file-download"></i> Resume</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
+  <!-- Hero Section -->
+  <div class="hero" id="hero">
     <div class="hero-content">
-      <img src="assets/imgs/profile.png" alt="Kamal Saini Photo">
-      <h1>Hi, I'm Kamal Saini</h1>
-      <p>Unity Game Developer</p>
-      <p class="hero-subtitle">
-        2.10+ Years Experience • Mobile & PC Games • Multiplayer
-      </p>
-      <a href="https://drive.google.com/file/d/1vcOTiyobKaMc14o6VgkzmNBrQGrN6E4R/view?usp=drive_link" class="btn" target="_blank">
-        <i class="fas fa-download"></i> Download Resume
-      </a>
+      <div class="profile-img-container">
+        <img src="assets/imgs/profile.png" alt="Kamal Saini">
+      </div>
+      <span class="badge-experience"><i class="fas fa-gamepad"></i> 2.10+ Years Professional Experience</span>
+      <h1>Kamal Saini</h1>
+      <p class="subtitle">Unity Game Developer specializing in 2D/3D Mobile, PC & Multiplayer Games</p>
+      
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="mailto:kamalkumar123096@gmail.com" class="btn-secondary"><i class="fas fa-envelope"></i> Get In Touch</a>
+      </div>
     </div>
-  </section> 
+  </div>
 
-  <!-- Quick Stats -->
-  <section id="stats">
-    <div class="stats-container">
-      <div class="stat-card">
-        <h2>2.10+</h2>
-        <p>Years Experience</p>
-      </div>
-      <div class="stat-card">
-        <h2>10+</h2>
-        <p>Games Developed / Contributed</p>
-      </div>
-      <div class="stat-card">
-        <h2>4</h2>
-        <p>Platforms (Android • iOS • Windows • WebGL)</p>
-      </div>
-      <div class="stat-card">
-        <h2>2D & 3D</h2>
-        <p>Game Architecture</p>
-      </div>
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-box">
+      <h3>2.10+</h3>
+      <p>Years Experience</p>
     </div>
-  </section>
+    <div class="stat-box">
+      <h3>10+</h3>
+      <p>Games Developed</p>
+    </div>
+    <div class="stat-box">
+      <h3>4</h3>
+      <p>Platforms (Android, iOS, PC, WebGL)</p>
+    </div>
+  </div>
 
   <!-- About -->
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Unity Game Developer with <strong>2 Years 10 Months</strong> of professional experience building mobile and PC games using Unity and C#. 
-      Skilled in gameplay systems, UI architecture, performance optimization, and backend integrations. 
-      <br><br>
-      Experienced in developing casual, puzzle, board, and multiplayer game systems. Proficient in clean architecture practices including 
-      <strong>ScriptableObjects, Object Pooling, Singleton Pattern</strong>, and modular game systems. Passionate about creating scalable, high-performance games and continuously improving game development skills.
+    <h2 class="section-title">About Me</h2>
+    <p class="section-desc">
+      Unity Game Developer with 2 Years 10 Months of experience designing gameplay architecture, UI systems, and backend integrations. Passionate about building modular, highly scalable systems using ScriptableObjects, Object Pooling, and clean OOP practices[cite: 1].
     </p>
   </section>
 
   <!-- Skills -->
   <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills-container">
-
-      <div class="skill-category">
-        <h3>Programming & Tools</h3>
-        <div class="skill-tags">
+    <h2 class="section-title">Technical Expertise</h2>
+    <p class="section-desc">Core competencies & technologies I work with daily</p>
+    
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4><i class="fas fa-code"></i> Programming & Engine</h4>
+        <div class="tag-container">
           <span>C#</span>
-          <span>OOP</span>
           <span>Unity Engine</span>
+          <span>Unity 6</span>
+          <span>OOP</span>
           <span>Git / GitHub</span>
         </div>
       </div>
-
-      <div class="skill-category">
-        <h3>Game Development</h3>
-        <div class="skill-tags">
-          <span>Unity 6</span>
-          <span>2D/3D Development</span>
-          <span>Gameplay Systems</span>
-          <span>Physics</span>
-          <span>Unity UI</span>
-          <span>Prefabs</span>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3>Architecture & Optimization</h3>
-        <div class="skill-tags">
+      
+      <div class="skill-card">
+        <h4><i class="fas fa-layer-group"></i> Architecture & Systems</h4>
+        <div class="tag-container">
           <span>ScriptableObjects</span>
-          <span>Singleton Architecture</span>
           <span>Object Pooling</span>
-          <span>Performance Tuning</span>
+          <span>Singleton Pattern</span>
+          <span>UI Architecture</span>
         </div>
       </div>
 
-      <div class="skill-category">
-        <h3>Platforms & Networking</h3>
-        <div class="skill-tags">
+      <div class="skill-card">
+        <h4><i class="fas fa-network-wired"></i> Backend & Multiplayer</h4>
+        <div class="tag-container">
+          <span>Socket.io</span>
+          <span>REST APIs</span>
+          <span>Multiplayer Sync</span>
+          <span>SDK Integration</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4><i class="fas fa-mobile-alt"></i> Platforms & Performance</h4>
+        <div class="tag-container">
           <span>Android</span>
           <span>iOS</span>
           <span>Windows</span>
           <span>WebGL</span>
-          <span>Socket.io (Multiplayer)</span>
-          <span>REST APIs</span>
+          <span>Mobile Optimization</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Timeline -->
+  <section id="experience">
+    <h2 class="section-title">Work Experience</h2>
+    <p class="section-desc">My professional journey as a Game Developer</p>
+
+    <div class="timeline">
+      
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h3>Game Developer</h3>
+          <div class="company">Capsitech IT Services (GameWise) — Jodhpur</div>
+          <span class="date">Oct 2025 – March 2026</span>
+          <ul>
+            <li>Developed 2D/3D casual and puzzle games focusing on gameplay systems, UI flow, and runtime mobile optimization[cite: 1].</li>
+            <li>Implemented procedural hole-pattern wall generation and obstacle avoidance logic for high replayability[cite: 1].</li>
+            <li>Optimized memory usage and framerates using Object Pooling and clean update loops[cite: 1].</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h3>Unity Developer</h3>
+          <div class="company">Mobzway Technologies LLP — Jaipur</div>
+          <span class="date">April 2023 – Oct 2025</span>
+          <ul>
+            <li>Engineered multiplayer board & card games (Ludo, Tambola, Snake & Ladder, Carrom, Poker, Blackjack)[cite: 1].</li>
+            <li>Handled REST APIs & Socket.io integrations for real-time multiplayer card sync and timers[cite: 1].</li>
+            <li>Fixed critical crashes and optimized runtime builds using ScriptableObjects and Object Pooling[cite: 1].</li>
+          </ul>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Capsitech Projects -->
-  <section id="capsitech">
-    <h2>Projects with Capsitech (GameWise)</h2>
+  <!-- Projects Grid -->
+  <section id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-desc">Commercial, Client & Personal Projects</p>
+
     <div class="projects-grid">
 
+      <!-- Pebble Trace -->
       <div class="project-card">
         <img src="assets/imgs/Pebble Trace.png" alt="Pebble Trace">
-        <div class="project-card-content">
+        <div class="project-info">
           <h3>Pebble Trace</h3>
-          <p>
-            Relaxing puzzle game where players connect matching colored pebbles to solve levels. Designed responsive UI flows, score tracking, and efficient mobile update loops.
-          </p>
-          <div class="project-links">
-            <a href="https://play.google.com/store/apps/details?id=com.TheGameWise.PebbleTrace&pcampaignid=web_share" target="_blank">
-              <i class="fab fa-google-play"></i> Google Play
-            </a>
-            <a href="https://apps.apple.com/in/app/pebble-trace/id6757587390" target="_blank">
-              <i class="fab fa-apple"></i> App Store
-            </a>
+          <p>Relaxing puzzle game connecting matching pebbles. Built with clean UI architecture and mobile performance tuning[cite: 1].</p>
+          <div class="tech-stack-badges">
+            <span>Unity 2D</span><span>C#</span><span>Android/iOS</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.TheGameWise.PebbleTrace" target="_blank"><i class="fab fa-google-play"></i> Play Store</a>
+            <a href="https://apps.apple.com/in/app/pebble-trace/id6757587390" target="_blank"><i class="fab fa-apple"></i> App Store</a>
           </div>
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="https://img.freepik.com/free-vector/endless-runner-game-concept_23-2148647582.jpg" alt="Obstacle Avoidance System">
-        <div class="project-card-content">
-          <h3>Procedural Obstacle Runner</h3>
-          <p>
-            Built procedural hole-pattern wall generation and obstacle avoidance mechanics using Object Pooling to maximize replayability and runtime performance on mobile.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Mobzway Projects -->
-  <section id="mobzway">
-    <h2>Projects with Mobzway Technologies</h2>
-    <div class="projects-grid">
-
+      <!-- Top Teen Patti -->
       <div class="project-card">
         <img src="assets/imgs/ttp.png" alt="Top Teen Patti">
-        <div class="project-card-content">
+        <div class="project-info">
           <h3>Top Teen Patti</h3>
-          <p>Multiplayer casino card game featuring real-time room joining, state management, and API integrations.</p>
-          <div class="project-links">
-            <a href="https://topteenpatti.net/" target="_blank">Visit Site</a>
+          <p>Real-time multiplayer card game with Socket.io room logic, backend API integration, and smooth game states[cite: 1].</p>
+          <div class="tech-stack-badges">
+            <span>Multiplayer</span><span>Socket.io</span><span>REST API</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://topteenpatti.net/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit Site</a>
           </div>
         </div>
       </div>
 
+      <!-- Happy Ace Casino -->
       <div class="project-card">
         <img src="assets/imgs/hac.png" alt="Happy Ace Casino">
-        <div class="project-card-content">
+        <div class="project-info">
           <h3>Happy Ace Casino</h3>
-          <p>Multi-game casino ecosystem integration including Poker & Blackjack card logic systems.</p>
-          <div class="project-links">
-            <a href="https://www.happyace.in/" target="_blank">Visit Site</a>
+          <p>Casino ecosystem featuring multi-card game logic (Poker, Blackjack) with high scalability[cite: 1].</p>
+          <div class="tech-stack-badges">
+            <span>Unity Engine</span><span>C#</span><span>UI Architecture</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://www.happyace.in/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit Site</a>
           </div>
         </div>
       </div>
 
+      <!-- 3D Rolling Ball -->
       <div class="project-card">
-        <img src="assets/imgs/mahaveeraResized.png" alt="Mahaveera">
-        <div class="project-card-content">
-          <h3>Mahaveera</h3>
-          <p>Full-featured multiplayer casino game with custom UI architecture and Socket.io integration.</p>
-          <div class="project-links">
-            <a href="https://www.mahaveera.live/" target="_blank">Visit Site</a>
+        <img src="assets/imgs/3drollingball.png" alt="3D Rolling Ball">
+        <div class="project-info">
+          <h3>3D Rolling Ball</h3>
+          <p>Physics-based rolling ball game featuring obstacle avoidance and tight physics controls.</p>
+          <div class="tech-stack-badges">
+            <span>Unity 3D</span><span>Physics</span><span>C#</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/kamal-game-studio/Simply-Pairs" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank"><i class="fas fa-play"></i> Itch.io</a>
           </div>
         </div>
       </div>
 
+      <!-- SimplyPairs -->
       <div class="project-card">
-        <img src="https://img.freepik.com/free-vector/board-game-concept_23-2148658932.jpg" alt="Board & Casual Games">
-        <div class="project-card-content">
-          <h3>Board Games Suite (Ludo, Carrom, Tambola)</h3>
-          <p>Developed core game loops, turn timers, and multiplayer state sync for popular board games including Ludo, Carrom, Tambola, and Snake & Ladder.</p>
+        <img src="assets/imgs/monkey.png" alt="SimplyPairs">
+        <div class="project-info">
+          <h3>SimplyPairs</h3>
+          <p>Card matching memory game developed using Object Pooling and custom ScriptableObjects.</p>
+          <div class="tech-stack-badges">
+            <span>Unity 2D</span><span>Object Pooling</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/kamal-game-studio/Simply-Pairs" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank"><i class="fas fa-play"></i> Play Demo</a>
+          </div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Personal Projects -->
-  <section id="personal">
-    <h2>Personal Projects</h2>
-    <div class="projects-grid">
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-desc">Have a game project or full-time opportunity? Let's build something awesome together.</p>
 
-      <div class="project-card">
-        <img src="assets/imgs/3drollingball.png" alt="3D Rolling Ball">
-        <div class="project-card-content">
-          <h3>3D Rolling Ball</h3>
-          <p>Physics-based rolling ball obstacle game built to test Unity physics and movement systems.</p>
-          <div class="project-links">
-            <a href="https://github.com/kamal-game-studio/Simply-Pairs" target="_blank">GitHub</a>
-            <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank">Itch.io</a>
-          </div>
+    <div class="contact-container">
+      <form action="https://formspree.io/f/xknkyoky" method="POST">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="John Doe" required>
         </div>
-      </div>
-
-      <div class="project-card">
-        <img src="assets/imgs/turnbased.png" alt="Turn Based Game">
-        <div class="project-card-content">
-          <h3>Turn Based Adventure (C++)</h3>
-          <p>Strategy text-based adventure game implemented purely in C++ to showcase OOP mastery.</p>
-          <div class="project-links">
-            <a href="https://github.com/KamalSainiGames/Pokemon-Text-Based-Adventure-C-" target="_blank">GitHub / Replit</a>
-          </div>
+        <div class="form-group">
+          <label>Your Email</label>
+          <input type="email" name="_replyto" placeholder="john@example.com" required>
         </div>
-      </div>
-
-      <div class="project-card">
-        <img src="assets/imgs/2dsnake.png" alt="2D Snake">
-        <div class="project-card-content">
-          <h3>2D Snake</h3>
-          <p>Classic arcade snake game recreated with grid-based movement logic in Unity.</p>
-          <div class="project-links">
-            <a href="https://github.com/kamal-game-studio/Simply-Pairs" target="_blank">GitHub</a>
-            <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank">Itch.io</a>
-          </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" rows="5" placeholder="Write your project details or job role..." required></textarea>
         </div>
-      </div>
-
-      <div class="project-card">
-        <img src="assets/imgs/monkey.png" alt="SimplyPairs">
-        <div class="project-card-content">
-          <h3>SimplyPairs</h3>
-          <p>Memory card matching game with UI animations and score management.</p>
-          <div class="project-links">
-            <a href="https://github.com/kamal-game-studio/Simply-Pairs" target="_blank">GitHub</a>
-            <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank">Itch.io</a>
-          </div>
-        </div>
-      </div>
-
+        <button type="submit" class="btn-primary" style="width:100%; border:none; cursor:pointer;">Send Message</button>
+      </form>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>© 2026 Kamal Saini | Unity Game Developer</p>
-    <div>
+    <div class="socials">
       <a href="https://github.com/KamalSainiGames" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/kamal-saini-106169173/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="mailto:kamalkumar123096@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -423,21 +494,9 @@
   </footer>
 
   <script>
-    // Toggle mobile menu
     const toggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector("nav ul");
     toggle.addEventListener("click", () => { navLinks.classList.toggle("show"); });
-
-    // Animate project cards on scroll
-    const cards = document.querySelectorAll(".project-card");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add("show");
-        }
-      });
-    }, { threshold:0.15 });
-    cards.forEach(card => observer.observe(card));
   </script>
 </body>
 </html>
