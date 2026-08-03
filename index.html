@@ -228,7 +228,7 @@
 
   <!-- Navigation -->
   <header>
-    <div class="logo">Kamal<span>.dev</span></div>
+    <div class="logo">Kamal<span>.gamedev</span></div>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <nav>
       <ul>
@@ -284,52 +284,55 @@
   </section>
 
   <!-- Skills -->
+  <!-- Skills -->
   <section id="skills">
-    <h2 class="section-title">Technical Expertise</h2>
-    <p class="section-desc">Core competencies & technologies I work with daily</p>
-    
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h4><i class="fas fa-code"></i> Programming & Engine</h4>
-        <div class="tag-container">
+    <h2>Technical Skills</h2>
+    <div class="skills-container">
+
+      <div class="skill-category">
+        <h3>Programming & Tools</h3>
+        <div class="skill-tags">
           <span>C#</span>
-          <span>Unity Engine</span>
-          <span>Unity 6</span>
           <span>OOP</span>
+          <span>Unity Engine</span>
           <span>Git / GitHub</span>
         </div>
       </div>
-      
-      <div class="skill-card">
-        <h4><i class="fas fa-layer-group"></i> Architecture & Systems</h4>
-        <div class="tag-container">
+
+      <div class="skill-category">
+        <h3>Game Development</h3>
+        <div class="skill-tags">
+          <span>Unity 6</span>
+          <span>2D/3D Development</span>
+          <span>Gameplay Systems</span>
+          <span>Physics</span>
+          <span>Unity UI</span>
+          <span>Prefabs</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Architecture & Optimization</h3>
+        <div class="skill-tags">
           <span>ScriptableObjects</span>
+          <span>Singleton Architecture</span>
           <span>Object Pooling</span>
-          <span>Singleton Pattern</span>
-          <span>UI Architecture</span>
+          <span>Performance Tuning</span>
         </div>
       </div>
 
-      <div class="skill-card">
-        <h4><i class="fas fa-network-wired"></i> Backend & Multiplayer</h4>
-        <div class="tag-container">
-          <span>Socket.io</span>
-          <span>REST APIs</span>
-          <span>Multiplayer Sync</span>
-          <span>SDK Integration</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <h4><i class="fas fa-mobile-alt"></i> Platforms & Performance</h4>
-        <div class="tag-container">
+      <div class="skill-category">
+        <h3>Platforms & Networking</h3>
+        <div class="skill-tags">
           <span>Android</span>
           <span>iOS</span>
           <span>Windows</span>
           <span>WebGL</span>
-          <span>Mobile Optimization</span>
+          <span>Socket.io (Multiplayer)</span>
+          <span>REST APIs</span>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -372,121 +375,154 @@
   </section>
 
   <!-- Projects Grid -->
-  <section id="projects">
-    <h2 class="section-title">Featured Projects</h2>
-    <p class="section-desc">Commercial, Client & Personal Projects</p>
-
+  <!-- Capsitech Projects -->
+  <section id="capsitech">
+    <h2>Projects with Capsitech (GameWise)</h2>
     <div class="projects-grid">
-
-      <!-- Pebble Trace -->
+      <!-- Projects Grid -->
       <div class="project-card">
         <img src="assets/imgs/Pebble Trace.png" alt="Pebble Trace">
-        <div class="project-info">
+        <div class="project-card-content">
           <h3>Pebble Trace</h3>
-          <p>Relaxing puzzle game connecting matching pebbles. Built with clean UI architecture and mobile performance tuning[cite: 1].</p>
-          <div class="tech-stack-badges">
-            <span>Unity 2D</span><span>C#</span><span>Android/iOS</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.TheGameWise.PebbleTrace" target="_blank"><i class="fab fa-google-play"></i> Play Store</a>
-            <a href="https://apps.apple.com/in/app/pebble-trace/id6757587390" target="_blank"><i class="fab fa-apple"></i> App Store</a>
+          <p>
+            Relaxing puzzle game where players connect matching colored pebbles to solve levels. Designed responsive UI flows, score tracking, and efficient mobile update loops.
+          </p>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.TheGameWise.PebbleTrace&pcampaignid=web_share" target="_blank">
+              <i class="fab fa-google-play"></i> Google Play
+            </a>
+            <a href="https://apps.apple.com/in/app/pebble-trace/id6757587390" target="_blank">
+              <i class="fab fa-apple"></i> App Store
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Top Teen Patti -->
+     
+
+    </div>
+  </section>
+
+  <!-- Mobzway Projects -->
+  <section id="mobzway">
+    <h2>Projects with Mobzway Technologies</h2>
+    <div class="projects-grid">
+
       <div class="project-card">
         <img src="assets/imgs/ttp.png" alt="Top Teen Patti">
-        <div class="project-info">
+        <div class="project-card-content">
           <h3>Top Teen Patti</h3>
-          <p>Real-time multiplayer card game with Socket.io room logic, backend API integration, and smooth game states[cite: 1].</p>
-          <div class="tech-stack-badges">
-            <span>Multiplayer</span><span>Socket.io</span><span>REST API</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://topteenpatti.net/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit Site</a>
+          <p>Multiplayer casino card game featuring real-time room joining, state management, and API integrations.</p>
+          <div class="project-links">
+            <a href="https://topteenpatti.net/" target="_blank">Visit Site</a>
           </div>
         </div>
       </div>
 
-      <!-- Happy Ace Casino -->
       <div class="project-card">
         <img src="assets/imgs/hac.png" alt="Happy Ace Casino">
-        <div class="project-info">
+        <div class="project-card-content">
           <h3>Happy Ace Casino</h3>
-          <p>Casino ecosystem featuring multi-card game logic (Poker, Blackjack) with high scalability[cite: 1].</p>
-          <div class="tech-stack-badges">
-            <span>Unity Engine</span><span>C#</span><span>UI Architecture</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://www.happyace.in/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit Site</a>
+          <p>Multi-game casino ecosystem integration including Poker & Blackjack card logic systems.</p>
+          <div class="project-links">
+            <a href="https://www.happyace.in/" target="_blank">Visit Site</a>
           </div>
         </div>
       </div>
 
-      <!-- 3D Rolling Ball -->
       <div class="project-card">
-        <img src="assets/imgs/3drollingball.png" alt="3D Rolling Ball">
-        <div class="project-info">
-          <h3>3D Rolling Ball</h3>
-          <p>Physics-based rolling ball game featuring obstacle avoidance and tight physics controls.</p>
-          <div class="tech-stack-badges">
-            <span>Unity 3D</span><span>Physics</span><span>C#</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/kamal-game-studio/Simply-Pairs" target="_blank"><i class="fab fa-github"></i> Code</a>
-            <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank"><i class="fas fa-play"></i> Itch.io</a>
+        <img src="assets/imgs/mahaveeraResized.png" alt="Mahaveera">
+        <div class="project-card-content">
+          <h3>Mahaveera</h3>
+          <p>Full-featured multiplayer casino game with custom UI architecture and Socket.io integration.</p>
+          <div class="project-links">
+            <a href="https://www.mahaveera.live/" target="_blank">Visit Site</a>
           </div>
         </div>
       </div>
 
-      <!-- SimplyPairs -->
       <div class="project-card">
-        <img src="assets/imgs/monkey.png" alt="SimplyPairs">
-        <div class="project-info">
-          <h3>SimplyPairs</h3>
-          <p>Card matching memory game developed using Object Pooling and custom ScriptableObjects.</p>
-          <div class="tech-stack-badges">
-            <span>Unity 2D</span><span>Object Pooling</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/kamal-game-studio/Simply-Pairs" target="_blank"><i class="fab fa-github"></i> Code</a>
-            <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank"><i class="fas fa-play"></i> Play Demo</a>
-          </div>
+        <img src="" alt="Board & Casual Games">
+        <div class="project-card-content">
+          <h3>Board Games Suite (Ludo, Carrom, Tambola)</h3>
+          <p>Developed core game loops, turn timers, and multiplayer state sync for popular board games including Ludo, Carrom, Tambola, and Snake & Ladder.</p>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2 class="section-title">Get In Touch</h2>
-    <p class="section-desc">Have a game project or full-time opportunity? Let's build something awesome together.</p>
+  <!-- Personal Projects -->
+  <section id="personal">
+    <h2>Personal Projects</h2>
+    <div class="projects-grid">
 
-    <div class="contact-container">
-      <form action="https://formspree.io/f/xknkyoky" method="POST">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" name="name" placeholder="John Doe" required>
+      <div class="project-card">
+        <img src="assets/imgs/3drollingball.png" alt="3D Rolling Ball">
+        <div class="project-card-content">
+          <h3>3D Rolling Ball</h3>
+          <p>Physics-based rolling ball obstacle game built to test Unity physics and movement systems.</p>
+          <div class="project-links">
+            <a href="https://github.com/KamalSainiGames/Roll-The-Ball" target="_blank">GitHub</a>
+            <!-- <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank">Itch.io</a> -->
+          </div>
         </div>
-        <div class="form-group">
-          <label>Your Email</label>
-          <input type="email" name="_replyto" placeholder="john@example.com" required>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/imgs/turnbased.png" alt="Turn Based Game">
+        <div class="project-card-content">
+          <h3>Turn Based Adventure (C++)</h3>
+          <p>Strategy text-based adventure game implemented purely in C++ to showcase OOP mastery.</p>
+          <div class="project-links">
+            <a href="https://github.com/KamalSainiGames/Pokemon-Text-Based-Adventure-C-" target="_blank">GitHub</a>
+          </div>
         </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea name="message" rows="5" placeholder="Write your project details or job role..." required></textarea>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/imgs/2dsnake.png" alt="2D Snake">
+        <div class="project-card-content">
+          <h3>2D Snake</h3>
+          <p>Classic arcade snake game recreated with grid-based movement logic in Unity.</p>
+          <div class="project-links">
+            <a href="https://github.com/KamalSainiGames/Snake2dgame" target="_blank">GitHub</a>
+           <!-- <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank">Itch.io</a> -->
+          </div>
         </div>
-        <button type="submit" class="btn-primary" style="width:100%; border:none; cursor:pointer;">Send Message</button>
-      </form>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/imgs/monkey.png" alt="SimplyPairs">
+        <div class="project-card-content">
+          <h3>SimplyPairs</h3>
+          <p>Memory card matching game with UI animations and score management.</p>
+          <div class="project-links">
+            <a href="https://github.com/kamal-game-studio/Simply-Pairs" target="_blank">GitHub</a>
+            <a href="https://kamalsainigames.itch.io/simplypairs" target="_blank">Itch.io</a>
+          </div>
+        </div>
+      </div>
+
+       <div class="project-card">
+        <img src="" alt="3D Tower Defence">
+        <div class="project-card-content">
+          <h3>SimplyPairs</h3>
+          <p>3D Tower Defence game in Unity where enemies follow a fixed path toward the player’s base. The player places towers that automatically attack enemies, stopping them from reaching the goal.</p>
+          <div class="project-links">
+            <a href="https://github.com/KamalSainiGames/Unity-3D-Tower-Defence" target="_blank">GitHub</a>
+           
+          </div>
+        </div>
+      </div>
+      
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>© 2026 Kamal Saini | Unity Game Developer</p>
-    <div class="socials">
+    <div>
       <a href="https://github.com/KamalSainiGames" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/kamal-saini-106169173/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="mailto:kamalkumar123096@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -494,9 +530,21 @@
   </footer>
 
   <script>
+    // Toggle mobile menu
     const toggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector("nav ul");
     toggle.addEventListener("click", () => { navLinks.classList.toggle("show"); });
+
+    // Animate project cards on scroll
+    const cards = document.querySelectorAll(".project-card");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold:0.15 });
+    cards.forEach(card => observer.observe(card));
   </script>
 </body>
 </html>
